@@ -36,7 +36,7 @@ CREATE TABLE card
 (
  card_id     int AUTO_INCREMENT  NOT NULL ,
  name        varchar(45) NOT NULL unique,
- difficulty  enum("1,2,3,4,5") NOT NULL ,
+ difficulty  enum('1','2','3','4','5') NOT NULL ,
  video_url   varchar(100) NOT NULL ,
  type        varchar(45) NOT NULL ,
  category_id int  NOT NULL ,
@@ -152,7 +152,6 @@ CREATE TABLE repsandrounds
 (
  repsandrounds_id int AUTO_INCREMENT  NOT NULL ,
  rounds           int NOT NULL ,
- time             time NOT NULL ,
  card_id          int  NOT NULL ,
 
 PRIMARY KEY (repsandrounds_id),
@@ -214,8 +213,3 @@ PRIMARY KEY (amrap_id, benchmark_id),
 FOREIGN KEY (amrap_id) REFERENCES amrap (amrap_id) ON DELETE CASCADE,
 FOREIGN KEY (benchmark_id) REFERENCES benchmark (benchmark_id)
 );
-
-
-
-
-
