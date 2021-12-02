@@ -4,8 +4,8 @@ use piefitdatabase;
 
 CREATE TABLE theme
 (
- name     varchar(45) NOT NULL ,
  theme_id int  AUTO_INCREMENT NOT NULL ,
+ name     varchar(45) NOT NULL ,
 
 PRIMARY KEY (theme_id)
 );
@@ -58,7 +58,7 @@ FOREIGN KEY (card_id) REFERENCES card (card_id) ON DELETE CASCADE
 
 CREATE TABLE user_statistic
 (
- statistic_id int AUTO_INCREMENT  NOT NULL ,
+ statistic_id int NOT NULL ,
  email        varchar(50) NOT NULL ,
 
 PRIMARY KEY (statistic_id, email),
@@ -70,8 +70,9 @@ CREATE TABLE boxcollection
 (
  boxcollection_id int AUTO_INCREMENT  NOT NULL ,
  name             varchar(45) NOT NULL ,
- description      varchar(300) NOT NULL ,
+ description      varchar(800) NOT NULL ,
  releasedate      date NOT NULL ,
+ price            decimal(6,2) NOT NULL,
 
 PRIMARY KEY (boxcollection_id)
 );
@@ -80,8 +81,9 @@ CREATE TABLE cardcollection
 (
  cardcollection_id int AUTO_INCREMENT  NOT NULL ,
  name              varchar(45) NOT NULL ,
- description       varchar(300) NOT NULL ,
+ description       varchar(800) NOT NULL ,
  releasedate       date NOT NULL ,
+ price            decimal(6,2) NOT NULL,
  boxcollection_id  int  NOT NULL ,
 
 PRIMARY KEY (cardcollection_id),
@@ -119,7 +121,7 @@ PRIMARY KEY (exercise_id)
 CREATE TABLE benchmark
 (
  benchmark_id int AUTO_INCREMENT  NOT NULL ,
- level        enum('beginner, intermediate, advanced, elite') NOT NULL ,
+ level        enum('beginner', 'intermediate', 'advanced', 'elite') NOT NULL ,
 
 PRIMARY KEY (benchmark_id)
 );
@@ -139,11 +141,10 @@ FOREIGN KEY (card_id) REFERENCES card (card_id) ON DELETE CASCADE
 
 CREATE TABLE workandrest_exercise
 (
- serialno         int AUTO_INCREMENT  NOT NULL ,
  workandrest_id int  NOT NULL ,
  exercise_id    int  NOT NULL ,
 
-PRIMARY KEY (serialno, workandrest_id, exercise_id),
+PRIMARY KEY (workandrest_id, exercise_id),
 FOREIGN KEY (workandrest_id) REFERENCES workandrest (workandrest_id) ON DELETE CASCADE,
 FOREIGN KEY (exercise_id) REFERENCES exercise (exercise_id)
 );
@@ -160,21 +161,20 @@ FOREIGN KEY (card_id) REFERENCES card (card_id) ON DELETE CASCADE
 
 CREATE TABLE repsandrounds_exercise
 (
- serialno           int  NOT NULL ,
- reps             int NOT NULL ,
  repsandrounds_id int  NOT NULL ,
  exercise_id      int  NOT NULL ,
+ reps             int NOT NULL ,
 
-PRIMARY KEY (serialno, repsandrounds_id, exercise_id),
+PRIMARY KEY (repsandrounds_id, exercise_id),
 FOREIGN KEY (repsandrounds_id) REFERENCES repsandrounds (repsandrounds_id) ON DELETE CASCADE,
 FOREIGN KEY (exercise_id) REFERENCES exercise (exercise_id)
 );
 
 CREATE TABLE repsandrounds_benchmark
 (
- time             time NOT NULL ,
  repsandrounds_id int  NOT NULL ,
  benchmark_id     int  NOT NULL ,
+ time             time NOT NULL ,
 
 PRIMARY KEY (repsandrounds_id, benchmark_id),
 FOREIGN KEY (repsandrounds_id) REFERENCES repsandrounds (repsandrounds_id) ON DELETE CASCADE,
@@ -193,21 +193,20 @@ FOREIGN KEY (card_id) REFERENCES card (card_id) ON DELETE CASCADE
 
 CREATE TABLE amrap_exercise
 (
- reps        int NOT NULL ,
- serialno    int AUTO_INCREMENT  NOT NULL ,
  amrap_id    int  NOT NULL ,
  exercise_id int  NOT NULL ,
+ reps        int NOT NULL ,
 
-PRIMARY KEY (serialno, amrap_id, exercise_id),
+PRIMARY KEY (amrap_id, exercise_id),
 FOREIGN KEY (amrap_id) REFERENCES amrap (amrap_id) ON DELETE CASCADE,
 FOREIGN KEY (exercise_id) REFERENCES exercise (exercise_id)
 );
 
 CREATE TABLE amrap_benchmark
 (
- rounds       int NOT NULL ,
  amrap_id     int  NOT NULL ,
  benchmark_id int  NOT NULL ,
+ rounds       int NOT NULL ,
 
 PRIMARY KEY (amrap_id, benchmark_id),
 FOREIGN KEY (amrap_id) REFERENCES amrap (amrap_id) ON DELETE CASCADE,
