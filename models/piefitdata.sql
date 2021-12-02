@@ -74,19 +74,23 @@ VALUES
 ;
 
 -- boxcollection table
-INSERT INTO boxcollection (name, description, releasedate, price)
+INSERT INTO boxcollection (name, description, description_long, releasedate, price)
 VALUES
-('PIEFITCARDS BOX – HOME EDITION V.1',	"Start din fitness rejse med Home edition træningskort fra Piefit.
+('PIEFITCARDS BOX – HOME EDITION V.1',	"Vores Home edition passer til begyndere og let øvet – men alle kan få gavn af træninger.", "Med en Home edition får/kan du:
 
-Træn hvor som helst og når som helst.
+40 stk. unikke, sjove kort, træn hele kroppen, uden udstyr, når som helst og hvor som helst
 
-Træningerne er tegnet, tilrettelagt og testet. Således får du den mest optimale træning.
+Forbrænde en masse kalorier og gå ned i vægt – Se forskellen i spejlet, på tøjet og dit syn på livet
 
-Home edition passer til begyndere og let øvet – men alle kan få gavn af træninger.
+Komme i bedre form, mærk dit helbred og kondi blive bedre – aldrig har det været nemmere
 
-Tag træningskortene med i sommerhus, parken, stranden – lav dem derhjemme på kontoret, på ferie, eller lige hvor det passer dig.",	'2021-11-22',	299.00),
-('PIEFITCARDS BOX – HIIT EDITION V.1',  'Her skal der være en description',	'2021-11-22',	299.00),
-('PIEFITCARDS BOX – POWER EDITION V.1', 'Her skal der være en description', '2021-11-22',	299.00)
+Få mere energi i hverdagen, bedre trivsel og øg din produktivitet – jobbet og dagens udfordinger bliver mere overskuelige
+
+PiefitCards box V.1 er træninger lige ved hånden – aldrig mere skal du være frustreret over at planlægge din træning. Træk et kort, træn og mærk forskellen på krop og sjæl
+
+10 fullbody, 10 uppebody, 10 lowerbody og 10 core træninger er inkluderet",	'2021-11-22',	299.00),
+('PIEFITCARDS BOX – HIIT EDITION V.1',  'Her skal der være en description',	'lang beskrivelse', '2021-11-22',	299.00),
+('PIEFITCARDS BOX – POWER EDITION V.1', 'Her skal der være en description', 'lang beskrivelse', '2021-11-22',	299.00)
 ;
 
 -- cardcollection table

@@ -71,6 +71,7 @@ CREATE TABLE boxcollection
  boxcollection_id int AUTO_INCREMENT  NOT NULL ,
  name             varchar(45) NOT NULL ,
  description      varchar(800) NOT NULL ,
+ description_long varchar(2000) NOT NULL,
  releasedate      date NOT NULL ,
  price            decimal(6,2) NOT NULL,
 
