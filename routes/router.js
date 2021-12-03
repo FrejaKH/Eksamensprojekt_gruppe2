@@ -11,6 +11,7 @@ const requestHandlers = {                             // application urls here
         "/about": handlers.home,
         "/contact": handlers.home,
         "/contacts": handlers.contacts,
+        "/workandrestcards": handlers.showWorkandrestCards,
         "/notfound": handlers.notfound,
         "js": handlers.js,
         "css": handlers.css,

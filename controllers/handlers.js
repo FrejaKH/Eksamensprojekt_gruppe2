@@ -8,6 +8,7 @@ const httpStatus = require("http-status-codes");            // http sc
 const models = require("../models/handleContacts");         // models are datahandlers
 const lib = require("../controllers/libWebUtil");           // home grown utilities
 const nmlPlate = require("../controllers/myTemplater");     // home grown templater
+const { showWorkandrestCards } = require("../models/handleContacts");
 
 const getAndServe = async function (res, path, contentType) {   // asynchronous
     let args = [...arguments];                              // arguments to array
@@ -23,7 +24,7 @@ const getAndServe = async function (res, path, contentType) {   // asynchronous
             });
             // call templater
             while (typeof (obj = myargs.shift()) !== 'undefined') {
-                data = nmlPlate.doTheMagic(data, obj)
+                data = nmlPlate.showCards(data, obj)
             }
 
             res.write(data);
@@ -85,5 +86,11 @@ module.exports = {
         await models.updContacts(req, res, obj);
         res.writeHead(httpStatus.MOVED_PERMANENTLY, { "Location": "http://localhost:3000" });
         res.end();
+    },
+    async showWorkandrestCards(req, res) {
+        let r = await models.showWorkandrestCards(req, res);
+        let content = "text/html; charset=utf-8";
+        let path = "views/workandrestcards.html";
+        getAndServe(res, path, content, { contacts: r, a: 'right aside', b: 'left aside' }); // extra arg for templater
     }
 }

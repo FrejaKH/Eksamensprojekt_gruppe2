@@ -19,5 +19,15 @@ module.exports = {
         const dbh = await maria.createConnection(dbp);
         const [rows, fields] = await dbh.execute('select * from user');
         return rows;
+    },
+
+    async showWorkandrestCards(req,res) {
+        const dbh = await maria.createConnection(dbp);
+        const [rows, fields] = await dbh.execute(
+            `SELECT c.name, c.difficulty, c.video_url, wr.rounds, wr.timeactive, wr.timerest from card c 
+            LEFT JOIN workandrest wr ON c.card_id = wr.card_id
+            WHERE c.card_id = wr.card_id;`
+        );
+        return rows;
     }
 }
