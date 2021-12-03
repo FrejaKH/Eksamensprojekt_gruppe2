@@ -16,7 +16,7 @@ CREATE TABLE user
  firstname   varchar(45) NOT NULL ,
  lastname    varchar(45) NOT NULL ,
  phonenumber int NOT NULL ,
- password    varchar(45) NOT NULL ,
+ password    blob NOT NULL ,
  isadmin     boolean NOT NULL ,
  theme_id    int  NOT NULL ,
 
