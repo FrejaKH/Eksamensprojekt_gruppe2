@@ -2,38 +2,33 @@
 <html>
     <head>
         <meta charset='utf-8'/>
-        <title class='title'></title>
-        <link rel='stylesheet' href='index.css'/>
-        <link rel='icon' type='image/svg+xml' href='favicon.svg'/>
+        <title class='title'>Log in til Piefit</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='../public/stylesheets/freja.css'/>
+        <link rel='icon' type='image/gif' href='../public/images/icon.png'/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
         <script type='module' src='login.js'></script>
     </head>
     <body>
         <header id='menu'></header>
-        <main class='otherpage'>
-            <aside></aside>
-            <section>
-                <h2>Login</h2>
-                <form method="post" action="/login">
-                    <div id='loginmsg'><42 msg 24></div>
-                    <div>
-                        <p>
-                            Email:<br/>
-                            <input type="email" name="email" required/>
-                        </p>
-                        <p>
-                            Password:<br/>
-                            <input type="password" name="password" required/>
-                        </p>
-                        <p>
-                            <br/><input type="submit" value="Send"/>
-                        </p>
-                    </div>
-                </form>
+        <main id="main_login" class='main'>
+            <img id="logo" src="../public/images/logo.png" alt="logo">
+            <section id="login_container">
+                <div >
+                    <h1 id="h1_login">Log in</h1>
+                    <form method="post" action="/login">
+                        <div id='loginmsg'><42 msg 24></div>
+                        <div id="forms">
+                            <input id="email" class="login_input" type="email" name="email" placeholder="E-mail" required/>
+                            <input id="password" class="login_input" type="password" name="password" placeholder="Password" required/>
+                            <p>Glemt password?</p>
+                            <input id="submit_btn" type="submit" value="Log in"/>
+                        </div>
+                    </form>
+                </div>
             </section>
-            <aside></aside>
         </main>
-        <footer>
-            <article id="cpryear"></article>
-        </footer>
+
     </body>
 </html>

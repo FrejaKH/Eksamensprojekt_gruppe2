@@ -1,0 +1,158 @@
+body {
+    width: 100%;
+    height:100%;
+    padding:0;
+    margin:0;
+    font-family: 'Lato', sans-serif;
+}
+
+.main {
+    width:100%;
+    height:800px;
+    text-align: center;
+}
+
+#main_index {
+    background-image: url("../images/frontpage_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center, center;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 26px;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+#buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+#signup, #login {
+    width: 208px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin:10px 0;
+}
+
+#signup {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#login {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#signup a{
+    text-decoration: none;
+    color: #000000;
+}
+
+#login a{
+    text-decoration: none;
+    color: #ffffff;
+}
+/* ----------------------------Log in siden------------------------------*/
+
+#logo {
+    width: 100px;
+}
+
+#h1_login {
+    color: #000000;
+}
+
+#main_login {
+    width:100%;
+    min-height: 568px;
+    background-image: linear-gradient(#FFE67B
+    , #DAE889);
+    padding-top:32px;
+}
+
+#login_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+#forms {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+#forms p {
+    margin-top:0;
+    font-size:12px;
+}
+
+.login_input, #submit_btn, .signup_input {
+    width: 208px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #000000;
+    margin:10px 0;
+}
+
+#submit_btn {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* ----------------------------Sign in siden------------------------------*/
+
+#main_signup {
+    width:100%;
+    height: 568px;
+    background-image: linear-gradient(#FFE67B
+    , #DAE889);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+}
+
+#signup_container {
+    margin: 0 40px;
+    font-size: 12px;;
+}
+
+.signup_input {
+    margin:5px 0;
+}
+
+/* ----------------------------------------------------------*/
+
+@media screen and (max-width: 320px) {
+    #main_index {
+        width:100%;
+        height:568px;
+        background-position:-60px center;
+    }
+
+ 
+}
+    
+
+
