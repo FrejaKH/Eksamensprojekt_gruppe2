@@ -1,22 +1,26 @@
 body {
     width: 100%;
-    height:100%;
     padding:0;
     margin:0;
     font-family: 'Lato', sans-serif;
+    box-sizing: border-box; 
+}
+
+#body_index {
+    background-image: url("../images/frontpage_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height:100vh;
 }
 
 .main {
     width:100%;
-    height:800px;
+    height:100vh;
     text-align: center;
 }
 
 #main_index {
-    background-image: url("../images/frontpage_bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center, center;
     display: flex;
     justify-content: center;
     align-items:center;
@@ -25,9 +29,18 @@ body {
 
 h1 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 26px;
+    font-size: 1.625rem;
     color: #ffffff;
     font-weight: 400;
+}
+
+#index_container #login_container {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3rem;
 }
 
 #buttons {
@@ -46,7 +59,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items:center;
-    margin:10px 0;
+    margin:0.625rem 0;
 }
 
 #signup {
@@ -76,22 +89,21 @@ h1 {
 
 #h1_login {
     color: #000000;
+    width:100%;
 }
 
 #main_login {
     width:100%;
-    min-height: 568px;
+    height:100vh;
     background-image: linear-gradient(#FFE67B
     , #DAE889);
-    padding-top:32px;
+    padding-top:2rem;
+    
 }
 
-#login_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 50px;
+#login_container, #form_container {
+    width:60%;
+    margin:0 auto;
 }
 
 #forms {
@@ -99,20 +111,20 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 10px 0;
+    padding: 0.625rem 0;
 }
 
 #forms p {
     margin-top:0;
-    font-size:12px;
+    font-size:0.75rem;
 }
 
-.login_input, #submit_btn, .signup_input {
+.login_input, #submit_btn, .signup_input, .change_input, #changeinfo_btn {
     width: 208px;
     height: 40px;
     border-radius: 8px;
     border: 2px solid #000000;
-    margin:10px 0;
+    margin:0.5rem 0;
 }
 
 #submit_btn {
@@ -120,11 +132,10 @@ h1 {
     color: #ffffff;
 }
 
-/* ----------------------------Sign in siden------------------------------*/
+/* ----------------------------Sign up------------------------------*/
 
 #main_signup {
     width:100%;
-    height: 568px;
     background-image: linear-gradient(#FFE67B
     , #DAE889);
     display: flex;
@@ -134,24 +145,138 @@ h1 {
 }
 
 #signup_container {
-    margin: 0 40px;
-    font-size: 12px;;
+    width:60%;
+    margin: 0 auto;
+    font-size: 0.75rem;
 }
 
 .signup_input {
-    margin:5px 0;
+    margin:0.5rem 0;
+}
+
+/* ----------------------------Profile------------------------------*/
+
+#main_profile h1, #main_myinfo h1{
+    color: #000000;
+    justify-content: flex-start;
+    padding-top:4rem;
+}
+
+#main_profile img, #main_myinfo img{
+    width:150px;
+    margin:2rem 0 1rem 0;
+}
+
+#profile_container {
+    width:100%;
+    margin-top:2rem;
+}
+
+#information, #edit_information, #trophies, #theme {
+    height:50px;
+    margin:0.5rem 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 1rem;
+}
+
+#information {
+    background-color:#C6D9DB;
+}
+
+#edit_information {
+    background-color:#DAE889;
+}
+
+#trophies {
+    background-color:#F8B2BA;
+}
+
+#theme {
+    background-color:#FFE67B;
+}
+
+#information p, #edit_information p, #trophies p {
+    margin:0;
+}
+
+#information img, #edit_information img, #trophies img {
+    width:1.5rem;
+    margin:0;
+}
+
+/* ----------------------------myinformation------------------------------*/
+
+#myinfo_container {
+    width:60%;
+    margin-top:2rem;
+    text-align: left;
+    padding-left:1.5rem;
+}
+
+#change_info_btn {
+    width:13rem;
+    height:2.5rem;
+    background-color: #DAE889;
+    border-radius: 8px;
+    border:none;
+    margin-top:2rem;
+}
+
+/* ----------------------------change info------------------------------*/
+
+#changeinfo_btn {
+    background-color:#DAE889;
+    border:none;
 }
 
 /* ----------------------------------------------------------*/
 
-@media screen and (max-width: 320px) {
-    #main_index {
+
+@media screen and (max-width: 380px) {
+    #body_index {
         width:100%;
-        height:568px;
-        background-position:-60px center;
+        height:667px;
+        background-position:-4rem center;
     }
 
- 
+    #main_login, #main_signup {
+        height: 667px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    #body_index {
+        width:100%;
+        height:568px;
+        background-position:-4rem 0;
+    }
+    
+    #main_login {
+        width:100%;
+        height:568px;
+    }
+    
+    #main_profile img{
+        width:150px;
+        margin:1rem 0 0.5rem 0;
+    }
+        
+    #information, #edit_information, #trophies, #theme {
+        height:40px;
+        margin:0.5rem 0;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:0 1rem;
+    }
+    
+    #information img, #edit_information img, #trophies img {
+        width:1.5rem;
+        margin:0;
+    }
+
 }
     
 

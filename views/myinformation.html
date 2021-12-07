@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset='utf-8'/>
-        <title class='title'>Velkommen til Piefit</title>
+        <title class='title'>Mine oplysninger</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel='stylesheet' href='../public/stylesheets/freja.css'/>
         <link rel='icon' type='image/gif' href='../public/images/icon.png'/>
@@ -10,24 +10,23 @@
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
         <script type='module' src='index.js'></script>
     </head>
-    <body id="body_index">
+    <body>
         <header id='menu'></header>
-        <main id="main_index" class='main'>
-            <img id="logo" src="../public/images/logo2.png" alt="logo">
+        <main id="main_myinfo" class='main'>
             <h1>
-                Velkommen til Piefit
+                Min profil
             </h1>
-            <div id="index_container">
-                <div id="buttons">
-                    <div id="signup">
-                        <a href="signup.html">Sign up</a>
-                    </div>
-                    <div id="login">
-                        <a href="login.html">Log in</a>
-                    </div>
-                </div>
+            <div id="profile_picture">
+                <img src="../public/images/user.png" alt="user">
             </div>
+            <p>Katrine Sørensen</p>
+            <div id="myinfo_container">
+                <p><strong>Fornavn:</strong></p>
+                <p><strong>Efternavn:</strong></p>
+                <p><strong>E-mail:</strong></p>
+                <p><strong>Telefonnumme:</strong></p>
+            </div>
+            <button id="change_info_btn">Rediger mine oplysninger</button>
         </main>
     </body>
 </html>
-

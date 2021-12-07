@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <title class='title'>Rediger mine oplysninger</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='../public/stylesheets/freja.css'/>
+        <link rel='icon' type='image/gif' href='../public/images/icon.png'/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <script type='module' src='login.js'></script>
+    </head>
+    <body>
+        <header id='menu'></header>
+        <main id="main_changeinfo" class='main'>
+            <section>
+                <div id="changeinfo_container">
+                    <h1 id="h1_changeinfo">Rediger mine oplysninger</h1>
+                    <p>Venligst indtast dine oplysninger for at oprette en bruger hos Piefit</p>
+                    <div id="forms">
+                        <input id="firstname" class="change_input" type="text" name="firstname" placeholder="Fornavn" required/>
+                        <input id="lastname" class="change_input" type="text" name="lastname" placeholder="Efternavn" required/>
+                        <input id="email" class="change_input" type="email" name="email" placeholder="E-mail" required/>
+                        <input id="phonenumber" class="change_input" type="number" name="phonenumber" placeholder="Telefonnummer" required/>
+                        <input id="password" class="change_input" type="password" name="password" placeholder="Adgangskode" required/>
+                        <input id="repeat_password" class="change_input" type="password" name="repeat_password" placeholder="Gentag adgangskode" required/>
+                        <input id="changeinfo_btn" type="submit" value="Opdater mine oplysninger"/>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>
