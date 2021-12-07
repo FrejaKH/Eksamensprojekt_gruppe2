@@ -8,10 +8,17 @@ const dbp = require('./dbParams.js');
 const bcrypt = require('bcryptjs');
 
 module.exports = {
+    // async updContacts(obj) {
+    //     const dbh = await maria.createConnection(dbp);
+    //     let hashed = await bcrypt.hash(obj.POST.password, 10); //Password + salt (1)
+    //     let sql = `insert into user values('${obj.POST.name}', '${obj.POST.email}', '${obj.POST.phone}', '${hashed}')`;
+    //     await dbh.query(sql);
+    // },
     async updContacts(obj) {
         const dbh = await maria.createConnection(dbp);
-        let hashed = await bcrypt.hash(obj.POST.password, 10);
-        let sql = `insert into user values('${obj.POST.name}', '${obj.POST.email}', '${obj.POST.phone}', '${hashed}')`;
+        let hashed = await bcrypt.hash(obj.POST.password, 10); //Password + salt (1)
+        let sql = `insert into user (email, firstname, lastname, phonenumber, password, isadmin, theme_id)
+        values('${obj.POST.email}', '${obj.POST.firstname}', '${obj.POST.lastname}', '${obj.POST.phonenumber}', '${hashed}', false, 1)`;
         await dbh.query(sql);
     },
 
