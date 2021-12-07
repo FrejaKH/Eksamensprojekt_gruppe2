@@ -2,9 +2,9 @@
 INSERT INTO theme (name)
 VALUES ('light'), ('dark');
 
--- User table
+-- User table, hashed password: admin
 INSERT INTO user (email, firstname, lastname, phonenumber, password, isadmin, theme_id)
-VALUES ('martin@piefitcards.dk', 'martin kidmose', 'kvist', 93947763, '21232F297A57A5A743894A0E4A801FC3', true, 1);
+VALUES ('martin@piefitcards.dk', 'martin kidmose', 'kvist', 93947763, '$2a$10$iJVQg0anraSdg4eIIzO0C.2TzbcmaFEB0PAg9sHxmBW22cV8Q0FAy', true, 1);
 
 -- category table
 INSERT INTO category (name)
