@@ -115,8 +115,8 @@ module.exports = {
         let obj = lib.makeWebArrays(req, data);         // home made GET and POST objects
         let r = await models.verify(obj);
         if (r.length == 1 && await bcrypt.compare(obj.POST.password, ''+r[0].password)) {
-            let name = '' + r[0].name;
-            session.set('login', name, { signed: true });       // set login cookie
+            let name = '' + r[0].firstname;
+            session.set('login', name, { signed: true, maxAge: (86400000*31)});       // set login cookie, One day (24 hours) is 86 400 000 milliseconds.
             req.url = "/";                                      // repoint req
             module.exports.home(req, res);                      // go to home page
         } else {
