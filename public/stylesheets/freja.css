@@ -155,6 +155,10 @@ h1 {
 }
 
 /* ----------------------------Profile------------------------------*/
+#main_profile {
+    width: clamp(50%, 450px, 100%);
+    margin: 0 auto;
+}
 
 #main_profile h1, #main_myinfo h1{
     color: #000000;
