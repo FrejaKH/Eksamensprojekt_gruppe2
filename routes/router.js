@@ -17,6 +17,7 @@ const requestHandlers = {                             // application urls here
         "js": handlers.js,
         "css": handlers.css,
         "png": handlers.png,
+        "jpg": handlers.jpg,
         "svg": handlers.svg,
         "ico": handlers.ico
     },

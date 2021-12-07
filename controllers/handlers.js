@@ -76,6 +76,11 @@ module.exports = {
         let content = "image/png";
         getAndServe(res, path, content);
     },
+    jpg(req, res) {
+        let path = "public/images" + req.url;
+        let content = "image/jpeg";
+        getAndServe(res, path, content);
+    },
     svg(req, res) {
         let path = "public" + req.url;
         let content = "image/svg+xml";
