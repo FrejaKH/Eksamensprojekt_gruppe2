@@ -14,6 +14,7 @@ const requestHandlers = {                             // application urls here
         "/login": handlers.login,
         "/signup": handlers.signup,
         "/logout": handlers.logout,
+        "/profile": handlers.profile,
         "/notfound": handlers.notfound,
         "js": handlers.js,
         "css": handlers.css,
@@ -25,7 +26,7 @@ const requestHandlers = {                             // application urls here
     POST: {
         "/contact": handlers.receiveContacts,
         "/login": handlers.verifyLogin,
-        "/signup": handlers.signup,
+        "/signup": handlers.signupUser,
     }
 }
 

@@ -28,9 +28,17 @@ module.exports = {
         return rows;
     },
 
+    async createUser(obj) {
+        const dbh = await maria.createConnection(dbp);
+        let hashed = await bcrypt.hash(obj.POST.password, 10); //Password + salt (1)
+        let sql = `insert into user (email, firstname, lastname, phonenumber, password, isadmin, theme_id)
+        values('${obj.POST.email}', '${obj.POST.firstname}', '${obj.POST.lastname}', '${obj.POST.phonenumber}', '${hashed}', false, 1)`;
+        await dbh.query(sql);
+    },
+
     async verify(obj) {
         const dbh = await maria.createConnection(dbp);
-        let sql = `select name, password from user where email = '${obj.POST.email}'`;
+        let sql = `select firstname, password from user where email = '${obj.POST.email}'`;
         let rows = await dbh.query(sql);
         return rows;
     }

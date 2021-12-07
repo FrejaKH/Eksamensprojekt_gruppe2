@@ -61,6 +61,11 @@ module.exports = {
         let content = "text/html; charset=utf-8";
         getAndServe(res, path, content);
     },
+    profile(req, res) {
+        let path = "views/profile.html";
+        let content = "text/html; charset=utf-8";
+        getAndServe(res, path, content);
+    },
     other(req, res) {
         let path = "views" + req.url + ".html";
         let content = "text/html; charset=utf-8";
@@ -120,6 +125,13 @@ module.exports = {
         module.exports.home(req, res);                  // go to home page
     },
 
+    async signupUser(req, res, data) {
+        let obj = lib.makeWebArrays(req, data);         // home made GET and POST objects
+        await models.createUser(obj);
+        req.url = "/";                                  // repoint req
+        module.exports.login(req, res);                  // go to home page
+    },
+
     async verifyLogin (req, res, data) {
         let session = cook.cookieObj(req, res);         // create session object
         let obj = lib.makeWebArrays(req, data);         // home made GET and POST objects
@@ -128,7 +140,7 @@ module.exports = {
             let name = '' + r[0].firstname;
             session.set('login', name, { signed: true, maxAge: (86400000*31)});       // set login cookie, One day (24 hours) is 86 400 000 milliseconds.
             req.url = "/";                                      // repoint req
-            module.exports.home(req, res);                      // go to home page
+            module.exports.profile(req, res);                      // go to profile page
         } else {
             module.exports.logout(req, res);                    // unset login cookie
         }
