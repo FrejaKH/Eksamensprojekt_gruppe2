@@ -7,7 +7,7 @@ body {
 }
 
 #body_index {
-    background-image: url("../images/frontpage_bg.jpg");
+    background-image: url("frontpage_bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
