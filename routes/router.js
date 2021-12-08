@@ -19,6 +19,7 @@ const requestHandlers = {
     "/velkommen": handlers.velkommen,
     "/myinformation": handlers.myinformation,
     "/changeinfo": handlers.changeinfo,
+    "/admin": handlers.admin,
     "/notfound": handlers.notfound,
     js: handlers.js,
     css: handlers.css,

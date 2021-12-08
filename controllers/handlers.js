@@ -140,6 +140,16 @@ module.exports = {
     }); // extra arg for templater
   },
 
+  async admin(req, res) {
+    if (!(await isLoggedIn(req, res))) {
+      req.url = "/login";
+      module.exports.login(req, res);
+    }
+    let content = "text/html; charset=utf-8";
+    let path = "views/admin.html";
+    getAndServe(res, path, content); // extra arg for templater
+  },
+
   async receiveContacts(req, res, data) {
     let obj = lib.makeWebArrays(req, data); // home made GET and POST objects
     await models.updContacts(obj);
