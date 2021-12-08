@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // module.exports = {
 //     host     : '127.0.0.1',
@@ -8,8 +8,8 @@
 // }
 
 module.exports = {
-    host     : '127.0.0.1',
-    user     : 'root',
-    password : 'donotmodifyroot',
-    database : 'piefitdatabase'
-}
+  host: "127.0.0.1",
+  user: "root",
+  password: "test",
+  database: "piefitdatabase",
+};
