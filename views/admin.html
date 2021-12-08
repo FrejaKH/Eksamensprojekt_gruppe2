@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <title class='title'>Administrator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' href='../public/stylesheets/freja.css'/>
+        <link rel='icon' type='image/gif' href='../public/images/icon.png'/>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+        <script type='module' src='index.js'></script>
+    </head>
+    <body id="body_admin">
+        <nav class="nav">
+            <input type="checkbox" id="nav__checkbox" class="nav__checkbox" />
+            <label for="nav__checkbox" class="nav__toggle">
+              <i class="fas fa-bars hamburger"></i>
+              <i class="fas fa-times close"></i>
+            </label>
+      
+            <ul class="nav__menu">
+              <li>
+                <a href="#">
+                  <img class="logo"
+                    src="logo_white.png"
+                  />
+                </a>
+              </li>
+      
+              <li><a href="profile">Profil</a></li>
+              <li><a href="#">Køb PiefitCards</a></li>
+              <li><a href="#">Mine PiefitCards</a></li>
+              <li><a href="#">Statistik</a></li>
+              <li><a href="#">Piefit Community</a></li>
+              <li><a href="#">Hjælp</a></li>
+              <li><a href="#">Log ud</a></li>
+            </ul>
+          </nav>
+          
+        <!-- <header id='menu'></header> -->
+        <h1 id="h1_admin">Home edition > core</h1>
+        <main id="main_admin" class='main'>
+            <div id="aside_menu_container">
+                <div id="aside_menu">
+                    <a href="#">
+                        <div class="edition aside_menu_box">Home edition</div>
+                    </a>
+                    <a href="#">
+                        <div class="core aside_menu_box">Core</div>
+                    </a>
+                    <a href="#">
+                        <div class="lowerbody aside_menu_box">Lowerbody</div>
+                    </a>
+                    <a href="#">
+                        <div class="upperbody aside_menu_box">Upperbody</div>
+                    </a>
+                    <a href="#">
+                        <div class="fullbody aside_menu_box">Fullbody</div>
+                    </a>
+                    <a href="#">
+                        <div class="edition aside_menu_box">Hiit edition</div>
+                    </a>
+                    <a href="#">
+                        <div class="core aside_menu_box">Core</div>
+                    </a>
+                    <a href="#">
+                        <div class="lowerbody aside_menu_box">Lowerbody</div>
+                    </a>
+                    <a href="#">
+                        <div class="upperbody aside_menu_box">Upperbody</div>
+                    </a>
+                    <a href="#">
+                        <div class="fullbody aside_menu_box">Fullbody</div>
+                    </a>
+                    <a href="#">
+                        <div class="edition aside_menu_box">Power edition</div>
+                    </a>
+                    <a href="#">
+                        <div class="core aside_menu_box">Core</div>
+                    </a>
+                    <a href="#">
+                        <div class="lowerbody aside_menu_box">Lowerbody</div>
+                    </a>
+                    <a href="#">
+                        <div class="upperbody aside_menu_box">Upperbody</div>
+                    </a>
+                    <a href="#">
+                        <div class="fullbody aside_menu_box">Fullbody</div>
+                    </a>
+                    <a href="#">
+                        <div class="edition aside_menu_box new_edition">Tilføj ny edition</div>
+                    </a>
+                    <a href="#">
+                        <div class="edition aside_menu_box">Tilføj ny kollektion</div>
+                    </a>
+                </div>
+            </div>
+            <div id="input_container">
+
+                <form id="add_cards" action="#" method="#">
+                    <div class="form_text"><span>Type</span></div>
+                    <input type="text" name="type" required> 
+                    <br>
+                    <div class="form_text"><span>Rounds</span></div>
+                    <input type="number" name="rounds" required>
+                    <br>
+                    <div class="form_text"><span>Work</span></div>
+                    <input type="number" name="work" required>
+                    sec
+                    <br>
+                    <div class="form_text"><span>Rest</span></div>
+                    <input type="number" name="rest" required>
+                    sec
+                    <br>
+                    <div class="form_text"><span>Exercise 1</span></div>
+                    <input type="text" name="exercise1" required>
+                    <br>
+                    <div class="form_text"><span>Exercise 2</span></div>
+                    <input type="text" name="exercise2" required>
+                    <br>
+                    <div class="form_text"><span>Exercise 3</span></div>
+                    <input type="text" name="exercise3" required>
+                    <br>
+                    <div class="form_text"><span>Exercise 4</span></div>
+                    <input type="text" name="exercise4" required>
+                    <br>
+                    <div class="form_text"><span>Hashtag</span></div>
+                    <input type="text" name="hashtag" required>
+                <h2>References</h2>
+                    <div class="form_text"><span>Text</span></div>
+                    <input type="text" name="text" required> 
+                    <br>
+                    <div class="form_text"><span>Time</span></div>
+                    <input type="text" name="time" required>
+                    <br>
+                    <div class="form_text"><span>Diffuculty level</span></div>
+                    <input type="number" name="level" required>
+                    <br>
+                    <div class="form_text"><span>QR kode</span></div>
+                    <input type="url" name="qr" required>
+                </form>
+            </div>
+            <div id="newcard">
+                
+            </div>
+            
+        </main>
+    </body>
+</html>
