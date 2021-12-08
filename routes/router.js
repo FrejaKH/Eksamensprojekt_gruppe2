@@ -17,6 +17,8 @@ const requestHandlers = {
     "/logout": handlers.logout,
     "/profile": handlers.profile,
     "/velkommen": handlers.velkommen,
+    "/myinformation": handlers.myinformation,
+    "/changeinfo": handlers.changeinfo,
     "/notfound": handlers.notfound,
     js: handlers.js,
     css: handlers.css,

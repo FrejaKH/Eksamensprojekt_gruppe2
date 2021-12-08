@@ -1,287 +1,388 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@400;700&display=swap");
+@import url("//use.fontawesome.com/releases/v5.15.3/css/all.css");
+
 body {
-    width: 100%;
-    padding:0;
-    margin:0;
-    font-family: 'Lato', sans-serif;
-    box-sizing: border-box; 
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
 }
 
 #body_index {
-    background-image: url("frontpage_bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    height:100vh;
+  background-image: url("frontpage_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
 }
 
 .main {
-    width:100%;
-    height:100vh;
-    text-align: center;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
 }
 
 #main_index {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.625rem;
-    color: #ffffff;
-    font-weight: 400;
+  font-family: "Bebas Neue", cursive;
+  font-size: 1.625rem;
+  color: #000000;
+  font-weight: 400;
+}
+
+#main_index h1 {
+  color: #ffffff;
 }
 
 #index_container #login_container {
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
 }
 
 #buttons {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: column;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-#signup, #login {
-    width: 208px;
-    height: 40px;
-    border-radius: 8px;
-    border: 2px solid #000000;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    margin:0.625rem 0;
+#signup,
+#login {
+  width: 208px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.625rem 0;
 }
 
 #signup {
-    background-color: #ffffff;
-    color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 #login {
-    background-color: #000000;
-    color: #ffffff;
+  background-color: #000000;
+  color: #ffffff;
 }
 
-#signup a{
-    text-decoration: none;
-    color: #000000;
+#signup a {
+  text-decoration: none;
+  color: #000000;
 }
 
-#login a{
-    text-decoration: none;
-    color: #ffffff;
+#login a {
+  text-decoration: none;
+  color: #ffffff;
 }
 /* ----------------------------Log in siden------------------------------*/
 
 #logo {
-    width: 100px;
+  width: 100px;
 }
 
 #h1_login {
-    color: #000000;
-    width:100%;
+  color: #000000;
+  width: 100%;
 }
 
 #main_login {
-    width:100%;
-    height:100vh;
-    background-image: linear-gradient(#FFE67B
-    , #DAE889);
-    padding-top:2rem;
-    
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(#ffe67b, #dae889);
+  padding-top: 2rem;
 }
 
-#login_container, #form_container {
-    width:60%;
-    margin:0 auto;
+#login_container,
+#form_container {
+  width: 60%;
+  margin: 0 auto;
 }
 
 #forms {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 0.625rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.625rem 0;
 }
 
 #forms p {
-    margin-top:0;
-    font-size:0.75rem;
+  margin-top: 0;
+  font-size: 0.75rem;
 }
 
-.login_input, #submit_btn, .signup_input, .change_input, #changeinfo_btn {
-    width: 208px;
-    height: 40px;
-    border-radius: 8px;
-    border: 2px solid #000000;
-    margin:0.5rem 0;
+.login_input,
+#submit_btn,
+.signup_input,
+.change_input,
+#changeinfo_btn {
+  width: 208px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  margin: 0.5rem 0;
 }
 
 #submit_btn {
-    background-color: #000000;
-    color: #ffffff;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 /* ----------------------------Sign up------------------------------*/
 
 #main_signup {
-    width:100%;
-    background-image: linear-gradient(#FFE67B
-    , #DAE889);
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: column;
+  width: 100%;
+  background-image: linear-gradient(#ffe67b, #dae889);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #signup_container {
-    width:60%;
-    margin: 0 auto;
-    font-size: 0.75rem;
+  width: 60%;
+  margin: 0 auto;
+  font-size: 0.75rem;
 }
 
 .signup_input {
-    margin:0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 /* ----------------------------Profile------------------------------*/
 #main_profile {
-    width: clamp(50%, 450px, 100%);
-    margin: 0 auto;
+  width: clamp(50%, 450px, 100%);
+  margin: 0 auto;
 }
 
-#main_profile h1, #main_myinfo h1{
-    color: #000000;
-    justify-content: flex-start;
-    padding-top:4rem;
+#main_profile h1,
+#main_myinfo h1 {
+  color: #000000;
+  justify-content: flex-start;
+  padding-top: 4rem;
 }
 
-#main_profile img, #main_myinfo img{
-    width:150px;
-    margin:2rem 0 1rem 0;
+#main_profile img,
+#main_myinfo img {
+  width: 150px;
+  margin: 2rem 0 1rem 0;
 }
 
 #profile_container {
-    width:100%;
-    margin-top:2rem;
+  width: 100%;
+  margin-top: 2rem;
 }
 
-#information, #edit_information, #trophies, #theme {
-    height:50px;
-    margin:0.5rem 0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:0 1rem;
+#information,
+#edit_information,
+#trophies,
+#theme {
+  height: 50px;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
 }
 
 #information {
-    background-color:#C6D9DB;
+  background-color: #c6d9db;
 }
 
 #edit_information {
-    background-color:#DAE889;
+  background-color: #dae889;
 }
 
 #trophies {
-    background-color:#F8B2BA;
+  background-color: #f8b2ba;
 }
 
 #theme {
-    background-color:#FFE67B;
+  background-color: #ffe67b;
 }
 
-#information p, #edit_information p, #trophies p {
-    margin:0;
+#information p,
+#edit_information p,
+#trophies p {
+  margin: 0;
 }
 
-#information img, #edit_information img, #trophies img {
-    width:1.5rem;
-    margin:0;
+#information img,
+#edit_information img,
+#trophies img {
+  width: 1.5rem;
+  margin: 0;
 }
 
 /* ----------------------------myinformation------------------------------*/
 
 #myinfo_container {
-    width:60%;
-    margin-top:2rem;
-    text-align: left;
-    padding-left:1.5rem;
+  text-align: left;
+  padding-left: 1.5rem;
+  width: clamp(50%, 450px, 100%);
+  margin: 2rem auto;
 }
 
 #change_info_btn {
-    width:13rem;
-    height:2.5rem;
-    background-color: #DAE889;
-    border-radius: 8px;
-    border:none;
-    margin-top:2rem;
+  width: 13rem;
+  height: 2.5rem;
+  background-color: #dae889;
+  border-radius: 8px;
+  border: none;
+  margin-top: 2rem;
 }
 
 /* ----------------------------change info------------------------------*/
 
 #changeinfo_btn {
-    background-color:#DAE889;
-    border:none;
+  background-color: #dae889;
+  border: none;
+}
+
+#changeinfo_container h1 {
+  color: #000000;
 }
 
 /* ----------------------------------------------------------*/
 
-
 @media screen and (max-width: 380px) {
-    #body_index {
-        width:100%;
-        height:667px;
-        background-position:-4rem center;
-    }
+  #body_index {
+    width: 100%;
+    height: 667px;
+    background-position: -4rem center;
+  }
 
-    #main_login, #main_signup {
-        height: 667px;
-    }
+  #main_login,
+  #main_signup {
+    height: 667px;
+  }
 }
 
 @media screen and (max-width: 330px) {
-    #body_index {
-        width:100%;
-        height:568px;
-        background-position:-4rem 0;
-    }
-    
-    #main_login {
-        width:100%;
-        height:568px;
-    }
-    
-    #main_profile img{
-        width:150px;
-        margin:1rem 0 0.5rem 0;
-    }
-        
-    #information, #edit_information, #trophies, #theme {
-        height:40px;
-        margin:0.5rem 0;
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-        padding:0 1rem;
-    }
-    
-    #information img, #edit_information img, #trophies img {
-        width:1.5rem;
-        margin:0;
-    }
+  #body_index {
+    width: 100%;
+    height: 568px;
+    background-position: -4rem 0;
+  }
 
+  #main_login {
+    width: 100%;
+    height: 568px;
+  }
+
+  #main_profile img {
+    width: 150px;
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  #information,
+  #edit_information,
+  #trophies,
+  #theme {
+    height: 40px;
+    margin: 0.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  #information img,
+  #edit_information img,
+  #trophies img {
+    width: 1.5rem;
+    margin: 0;
+  }
 }
-    
 
+/* menu */
 
+.logo {
+  height: 2rem;
+}
+
+.hamburger,
+.close {
+  font-size: 2rem;
+  color: white;
+}
+.nav {
+  background: black;
+  padding: 20px;
+}
+.nav__toggle {
+  position: absolute;
+  cursor: pointer;
+  margin: 0rem 1rem;
+  right: 0;
+}
+
+.close,
+input[type="checkbox"] {
+  display: none;
+}
+.hamburger {
+  margin-top: 0.2rem;
+}
+.nav__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  margin: 0 1rem 0 1rem;
+  padding: 0;
+}
+li {
+  list-style: none;
+  display: none;
+}
+li:first-child {
+  margin-right: auto;
+  display: block;
+}
+.nav__menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+#nav__checkbox:checked ~ ul.nav__menu li {
+  display: block;
+}
+#nav__checkbox:checked ~ label.nav__toggle .hamburger {
+  display: none;
+}
+#nav__checkbox:checked ~ label.nav__toggle .close {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav__toggle {
+    display: none;
+  }
+  .nav__menu {
+    flex-direction: row;
+  }
+  .nav__menu li {
+    display: block;
+  }
+}
