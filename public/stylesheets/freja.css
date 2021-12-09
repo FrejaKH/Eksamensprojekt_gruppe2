@@ -243,6 +243,14 @@ h1 {
   margin: 2rem auto;
 }
 
+#myinfo_container td {
+  padding-top: 20px;
+}
+
+#myinfo_container td span {
+  font-weight: bold;
+}
+
 #change_info_btn {
   width: 13rem;
   height: 2.5rem;
@@ -387,13 +395,11 @@ li:first-child {
   }
 }
 
-
-
 /*---------------------Admin--------------------------*/
 
 #h1_admin {
-  text-align:center;
-  margin:2rem 0;
+  text-align: center;
+  margin: 2rem 0;
 }
 
 #body_admin {
@@ -402,85 +408,84 @@ li:first-child {
 
 #main_admin {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
 }
 
 #aside_menu_container {
-  width:20%;
+  width: 20%;
 }
 
 #aside_menu {
-  width:250px;
+  width: 250px;
   background-color: #000000;
-  border:1px solid #000000;
+  border: 1px solid #000000;
 }
 
 .aside_menu_box {
-  height:40px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  border:1px solid #000000;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
 }
 
 .edition {
-  color:#ffffff;
+  color: #ffffff;
   font-size: 1.25rem;
 }
 
 .new_edition {
-  border-bottom:1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
 }
 
 .core {
   background-color: #c6d9db;
-  justify-content:left;
-  padding-left:1rem;
+  justify-content: left;
+  padding-left: 1rem;
 }
 
 .lowerbody {
   background-color: #dae889;
-  justify-content:left;
-  padding-left:1rem;
+  justify-content: left;
+  padding-left: 1rem;
 }
 
 .upperbody {
   background-color: #f8b2ba;
-  justify-content:left;
-  padding-left:1rem;
+  justify-content: left;
+  padding-left: 1rem;
 }
 
 .fullbody {
   background-color: #ffe67b;
-  justify-content:left;
-  padding-left:1rem;
+  justify-content: left;
+  padding-left: 1rem;
 }
 
 #input_container {
-  width:40%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#add_cards, #references {
+#add_cards,
+#references {
   text-align: left;
 }
 
-#add_cards input, #references input {
-  margin:1rem;
-  width:15rem;
-  height:2rem;
+#add_cards input,
+#references input {
+  margin: 1rem;
+  width: 15rem;
+  height: 2rem;
 }
 
 .form_text {
-  width:7rem;
+  width: 7rem;
   display: inline-block;
-
 }
 
 #newcard {
-  width:40%;
+  width: 40%;
 }
-
-

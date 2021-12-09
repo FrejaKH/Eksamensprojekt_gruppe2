@@ -6,6 +6,7 @@
 const maria = require("mariadb"); // file system access
 const dbp = require("./dbParams.js");
 const bcrypt = require("bcryptjs");
+const cook = require("../controllers/sess"); // session cookies
 
 module.exports = {
   // async updContacts(obj) {
@@ -22,15 +23,19 @@ module.exports = {
     await dbh.query(sql);
   },
 
-  //   async showContacts() {
-  //     const dbh = await maria.createConnection(dbp);
-  //     const rows = await dbh.query(`select * from user`);
-  //     return rows;
-  //   },
-
   async showContacts() {
     const dbh = await maria.createConnection(dbp);
-    const rows = await dbh.query(`select * from user`); //testing
+    const rows = await dbh.query(`select * from user`);
+    return rows;
+  },
+
+  async userData(req, res) {
+    let session = cook.cookieObj(req, res); // create session object
+    let chk = session.get("login", { signed: true });
+    const dbh = await maria.createConnection(dbp);
+    const rows = await dbh.query(
+      `select * from user where firstname = '${chk}'`
+    );
     return rows;
   },
 

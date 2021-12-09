@@ -16,7 +16,7 @@ exports.doTheMagic = function (data, obj) {
       s = `<table>`;
       for (let c of obj[doo]) {
         //  loop through obj (array)
-        let user = new User(c.email, c.firstname, c.lastname, c.phonenumber);
+        let user = new User(c.firstname, c.lastname, c.phonenumber, c.email);
         s += user.toString();
       }
       s += `</table>`;
