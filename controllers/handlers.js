@@ -83,8 +83,8 @@ module.exports = {
     let chk = session.get("login", { signed: true });
     let path = "views/myinformation.html";
     let content = "text/html; charset=utf-8";
-    let r = await models.showContacts(req, res);
-    getAndServe(res, path, content, { username: chk, test: r });
+    let r = await models.userData(req, res);
+    getAndServe(res, path, content, { userinfo: r });
   },
   changeinfo(req, res) {
     let path = "views/changeinfo.html";
