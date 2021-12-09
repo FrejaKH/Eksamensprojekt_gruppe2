@@ -65,22 +65,44 @@ module.exports = {
     getAndServe(res, path, content);
   },
   profile(req, res) {
+    let session = cook.cookieObj(req, res); // create session object
+    let chk = session.get("login", { signed: true });
     let path = "views/profile.html";
     let content = "text/html; charset=utf-8";
-    getAndServe(res, path, content);
+    getAndServe(res, path, content, { username: chk });
   },
   velkommen(req, res) {
+    let session = cook.cookieObj(req, res); // create session object
+    let chk = session.get("login", { signed: true });
     let path = "views/velkommen.html";
     let content = "text/html; charset=utf-8";
-    getAndServe(res, path, content);
+    getAndServe(res, path, content, { username: chk });
   },
-  myinformation(req, res) {
+  async myinformation(req, res) {
+    let session = cook.cookieObj(req, res); // create session object
+    let chk = session.get("login", { signed: true });
     let path = "views/myinformation.html";
     let content = "text/html; charset=utf-8";
-    getAndServe(res, path, content);
+    let r = await models.userData(req, res);
+    getAndServe(res, path, content, { userinfo: r });
   },
   changeinfo(req, res) {
     let path = "views/changeinfo.html";
+    let content = "text/html; charset=utf-8";
+    getAndServe(res, path, content);
+  },
+  feedbackmsg(req, res) {
+    let path = "views/feedbackmsg.html";
+    let content = "text/html; charset=utf-8";
+    getAndServe(res, path, content);
+  },
+  mycards(req, res) {
+    let path = "views/mycards.html";
+    let content = "text/html; charset=utf-8";
+    getAndServe(res, path, content);
+  },
+  categories(req, res) {
+    let path = "views/categories.html";
     let content = "text/html; charset=utf-8";
     getAndServe(res, path, content);
   },
