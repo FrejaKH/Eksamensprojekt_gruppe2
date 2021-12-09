@@ -1,6 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@400;700&display=swap");
 @import url("//use.fontawesome.com/releases/v5.15.3/css/all.css");
 
+:root{
+   
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+
+  --clr-blue: rgb(198, 217, 219);
+  --clr-blue_light: rgb(198, 217, 219, 0.8);
+  --clr-yellow: rgb(255, 230, 123);
+  --clr-yellow_light: rgb(255, 230, 123, 0.8);
+  --clr-green: rgb(218, 232, 137);
+  --clr-green_light: rgb(218, 232, 137, 0.8);
+  --clr-pink: rgb(248, 178, 186);
+  --clr-pink_light: rgb(248, 178, 186, 0.8);
+  --clr-red: #D83232;
+  --clr-black: #000000;
+  --clr-white: #FFFFFF;
+  --clr-dark: #394356;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
 body {
   width: 100%;
   padding: 0;
@@ -41,6 +66,7 @@ h1 {
   color: #000000;
   font-weight: 400;
 }
+
 
 #main_index h1 {
   color: #ffffff;
@@ -396,9 +422,22 @@ li:first-child {
   margin:2rem 0;
 }
 
-#body_admin {
-  background-color: #c6d9db;
+.body_admin {
+  background-color: var(--clr-white);
 }
+.bg__core{
+  background-color: var(--clr-blue_light);
+}
+.bg__upperbody{
+  background-color: var(--clr-pink_light);
+}
+.bg__lowerbody{
+  background-color: var(--clr-green_light);
+}
+.bg__fullbody{
+  background-color: var(--clr-yellow_light);
+}
+
 
 #main_admin {
   display: flex;
@@ -414,6 +453,7 @@ li:first-child {
   background-color: #000000;
   border:1px solid #000000;
 }
+
 
 .aside_menu_box {
   height:40px;
@@ -433,7 +473,7 @@ li:first-child {
 }
 
 .core {
-  background-color: #c6d9db;
+  background-color: rgb(198, 217, 219);
   justify-content:left;
   padding-left:1rem;
 }
@@ -479,8 +519,97 @@ li:first-child {
 
 }
 
+/*---------------------Admin Card------------------------*/
+
 #newcard {
   width:40%;
 }
 
+
+
+h1 { font-size: 2.5rem}
+h2 { font-size: 1.25rem}
+
+.h2__small {
+font-size: 1rem;
+line-height: 1.5;
+}
+
+h1,
+h2 {
+font-family: "Bebas Neue Pro Expanded", sans-serif;
+font-weight: 400;
+color: var(--clr-red);
+line-height: 1;
+}
+
+h3,
+h4,
+h6 {
+font-family: "Lato", sans-serif;
+font-weight: bold;
+color: var(--clr-black);
+}
+
+.card-container {
+padding: 1.75rem;
+border-radius: 1.5rem;
+max-width: 25rem;
+aspect-ratio: 1 / 1;
+text-align: start;
+
+border: 2px solid var(--clr-black);
+box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.card-type__core {
+background-color: var(--clr-blue);
+}
+
+.grid {
+display: grid;
+width: 100%;
+}
+
+.grid-type__workandrest {
+grid-template-columns: 1fr;
+}
+
+.grid-type__repsandrounds {
+grid-template-columns: 1fr 30%;
+}
+
+.grid-item {
+position:relative;
+padding: 1rem 0;
+}
+
+.card-duration {
+  border-left:2px solid var(--clr-black);
+   text-align: center;
+}
+
+
+.grid-item::before,
+.grid-item::after{
+content:'';
+  border-bottom:2px solid var(--clr-black);
+  position:absolute;
+  display:block;
+  width: 100%;
+}
+.grid-item::before{
+margin-top: -1rem;
+}
+.grid-item::after{
+margin-top: 1rem;
+}
+
+/* .grid-item:nth-of-type(2), 
+.grid-item:nth-of-type(4),
+.grid-item:nth-of-type(6),
+.grid-item:nth-of-type(8),
+.grid-item:nth-of-type(10){
+background-color: var(--clr-pink);
+} */
 

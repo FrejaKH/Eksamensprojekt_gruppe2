@@ -8,9 +8,9 @@
         <link rel='icon' type='image/gif' href='icon.png'/>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-        <script type='module' src='index.js'></script>
+        <script type='module' src='admin.js'></script>
     </head>
-    <body id="body_admin">
+    <body id="body_admin" class="body_admin bg__core">
         <nav class="nav">
             <input type="checkbox" id="nav__checkbox" class="nav__checkbox" />
             <label for="nav__checkbox" class="nav__toggle">
@@ -99,19 +99,24 @@
 
                 <form id="add_cards" action="#" method="#">
                     <div class="form_text"><span>Type</span></div>
-                    <input type="text" name="type" required> 
+                    <datalist id="type-options">
+                        <option>AMRAP</option>
+                        <option>REPS/ROUNDS</option>
+                        <option>WORK/REST</option>
+                    </datalist>
+                    <input type="text" name="type" list="type-options" required> 
                     <br>
                     <div class="form_text"><span>Rounds</span></div>
-                    <input type="number" name="rounds" required>
+                    <input type="number" name="rounds" min="1"  required>
                     <br>
-                    <div class="form_text"><span>Work</span></div>
+                    <!-- <div class="form_text"><span>Work</span></div>
                     <input type="number" name="work" required>
                     sec
                     <br>
                     <div class="form_text"><span>Rest</span></div>
                     <input type="number" name="rest" required>
                     sec
-                    <br>
+                    <br> -->
                     <div class="form_text"><span>Exercise 1</span></div>
                     <input type="text" name="exercise1" required>
                     <br>
@@ -142,6 +147,50 @@
             </div>
             <div id="newcard">
                 
+                <div class="card-container card-type__core">
+                    <div class="card-content">
+                  <div class="card-header">
+                  <h1 data-card-type>REPS/ROUNDS</h1>
+                   <h2 data-card-rounds class="h2__small">3 ROUNDS</h2>
+                    
+                  </div>
+                    
+                      <div class="grid grid-type__repsandrounds">
+                        <div class="grid-item">
+                        <h2>EXERCISES</h2>
+                        </div>
+                        <div class="grid-item card-duration">
+                        <h2 data-card-duration="" >REPS</h2>
+                        </div>
+                        <div data-card-exercise="" class="grid-item card-exercise">
+                        BIG JACK
+                        </div>
+                        <div data-card-reps="" class="grid-item card-duration">
+                        15
+                        </div>
+                        <div data-card-exercise="" class="grid-item card-exercise">
+                        SIDE V UP (L)
+                        </div>
+                        <div data-card-reps="" class="grid-item card-duration">
+                        10
+                        </div>
+                        <div data-card-exercise="" class="grid-item card-exercise">
+                        SIDE V UP (R)
+                        </div>
+                        <div data-card-reps="" class="grid-item card-duration">
+                        10
+                        </div>
+                        <div data-card-exercise="" class="grid-item card-exercise">
+                        1/2 BURPEE
+                        </div>
+                        <div data-card-reps="" class="grid-item card-duration">
+                        10
+                        </div>
+                      </div>
+                      <div data-card-name class="card-name">#PiefitSanJose</div>
+                    </div>
+                  </div>  
+                  
             </div>
             
         </main>
