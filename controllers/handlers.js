@@ -91,6 +91,21 @@ module.exports = {
     let content = "text/html; charset=utf-8";
     getAndServe(res, path, content);
   },
+  feedbackmsg(req, res) {
+    let path = "views/feedbackmsg.html";
+    let content = "text/html; charset=utf-8";
+    getAndServe(res, path, content);
+  },
+  mycards(req, res) {
+    let path = "views/mycards.html";
+    let content = "text/html; charset=utf-8";
+    getAndServe(res, path, content);
+  },
+  categories(req, res) {
+    let path = "views/categories.html";
+    let content = "text/html; charset=utf-8";
+    getAndServe(res, path, content);
+  },
   other(req, res) {
     let path = "views" + req.url + ".html";
     let content = "text/html; charset=utf-8";

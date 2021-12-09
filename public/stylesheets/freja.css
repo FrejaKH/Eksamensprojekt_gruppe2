@@ -14,6 +14,15 @@ a {
   color: #000000;
 }
 
+.btn {
+  background-color: #dae889;
+  border: none;
+  height: 40px;
+  border-radius: 8px;
+  padding:0 1rem;
+  margin-top:2rem;
+}
+
 #body_index {
   background-image: url("frontpage_bg.jpg");
   background-repeat: no-repeat;
@@ -146,6 +155,7 @@ h1 {
 #submit_btn {
   background-color: #000000;
   color: #ffffff;
+  cursor: pointer;
 }
 
 /* ----------------------------Sign up------------------------------*/
@@ -250,6 +260,7 @@ h1 {
   border-radius: 8px;
   border: none;
   margin-top: 2rem;
+  cursor: pointer;
 }
 
 /* ----------------------------change info------------------------------*/
@@ -257,6 +268,7 @@ h1 {
 #changeinfo_btn {
   background-color: #dae889;
   border: none;
+  cursor: pointer;
 }
 
 #changeinfo_container h1 {
@@ -483,4 +495,119 @@ li:first-child {
   width:40%;
 }
 
+
+/* --------------------- feedback message --------------*/ 
+
+
+/* --------------------- mycards --------------*/
+
+#main_mycards {
+  width: clamp(50%, 450px, 100%);
+
+  margin: 0 auto;
+}
+
+#mycards_container,
+#categories_container {
+  width:17.75rem;
+  margin:0 auto;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mycards_box {
+  width:17.75rem;
+  height:8rem;
+  border-radius: 8px;
+  padding-top:1rem;
+  margin:0.5rem;
+  font-size:1.25rem;
+  font-weight: 700;
+  position:relative;
+}
+
+.mycards_box img {
+  width:100px;
+}
+
+.mycards_box p {
+margin:0.5rem 0;
+}
+
+#home_edition {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+  width:100%;
+  height:100%;
+  z-index:2;
+  position:absolute;
+  top:0;
+  left:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+}
+
+.overlay img {
+  width: 2.5rem;
+}
+
+#code {
+  text-align: left;
+}
+
+#code h2 {
+  font-size:1rem;
+}
+
+#mycards_container input {
+  height: 40px;
+  border:2px solid #000000;
+  border-radius: 8px;
+  padding-left: 1rem;
+  display:block;
+  margin:2rem 0;
+}
+
+#mycards_container .btn {
+  border:none;
+  margin:1rem auto;
+}
+
+/* --------------------- categories --------------*/
+
+.category_box {
+  width:17.75rem;
+  height:6rem;
+  border-radius: 8px;
+  margin:0.5rem;
+  font-size:1.25rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#core {
+  background-color: #c6d9db;
+}
+
+#lowerbody {
+  background-color: #dae889;
+}
+
+#upperbody {
+  background-color: #f8b2ba;
+}
+
+#fullbody {
+  background-color: #ffe67b;
+}
 
