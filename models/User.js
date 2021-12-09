@@ -1,13 +1,14 @@
-'use strict';
+"use strict";
 
 module.exports = class User {
-    constructor(name, email, phone) {
-        this.name = name,
-        this.email = email,
-        this.phone = phone
-    }
+  constructor(email, firstname, lastname, phonenumber) {
+    (this.email = email),
+      (this.firstname = firstname),
+      (this.lastname = lastname),
+      (this.phonenumber = phonenumber);
+  }
 
-    toString() {
-        return `<tr><td>${this.name}</td><td>${this.email}</td><td>${this.phone}</td></tr>`;
-    }
+  toString() {
+    return `<tr><td>${this.email}</td><td>${this.firstname}</td><td>${this.lastname}</td><td>${this.phonenumber}</td></tr>`;
+  }
 };

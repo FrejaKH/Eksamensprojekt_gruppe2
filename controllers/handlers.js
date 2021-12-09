@@ -65,19 +65,26 @@ module.exports = {
     getAndServe(res, path, content);
   },
   profile(req, res) {
+    let session = cook.cookieObj(req, res); // create session object
+    let chk = session.get("login", { signed: true });
     let path = "views/profile.html";
     let content = "text/html; charset=utf-8";
-    getAndServe(res, path, content);
+    getAndServe(res, path, content, { username: chk });
   },
   velkommen(req, res) {
+    let session = cook.cookieObj(req, res); // create session object
+    let chk = session.get("login", { signed: true });
     let path = "views/velkommen.html";
     let content = "text/html; charset=utf-8";
-    getAndServe(res, path, content);
+    getAndServe(res, path, content, { username: chk });
   },
-  myinformation(req, res) {
+  async myinformation(req, res) {
+    let session = cook.cookieObj(req, res); // create session object
+    let chk = session.get("login", { signed: true });
     let path = "views/myinformation.html";
     let content = "text/html; charset=utf-8";
-    getAndServe(res, path, content);
+    let r = await models.showContacts(req, res);
+    getAndServe(res, path, content, { username: chk, test: r });
   },
   changeinfo(req, res) {
     let path = "views/changeinfo.html";
