@@ -663,25 +663,25 @@ content:'';
   width: 100%;
 }
 
-/* .grid-item::before{
-margin-top: -1rem;
-} */
-/* .grid-item::after{
-margin-top: 1rem;
-} */
+.difficulty {
+  display: flex;
+}
 
-/* @media screen and (max-width: 1000px) {
-  #main_admin {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-  
-  #aside_menu_container {
-    min-width: fit-content;
-    width: 100%;
-  }
-}  */
+.difficulty{
+  border-right:2px solid var(--clr-black);
+  text-align: center;
+}
+
+.p-icon {
+    background-image: url(icon.png);
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.25;
+}
+.p-icon_active {
+  opacity: 1;
+}
 
 /* --------------------- feedback message --------------*/ 
 

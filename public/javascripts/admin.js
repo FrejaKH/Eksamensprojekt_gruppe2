@@ -39,7 +39,7 @@ const $q = function (foo) {
       $$q("add_cards", '[name="exercise4"]'),
     ],
     hashtag: $$q("add_cards", '[name="hashtag"]'),
-    // text: $$q('add_cards','[name="text"]'),
+    text: $$q('add_cards','[name="text"]'),
     time: $$q('add_cards','[name="time"]'),
     // level: $$q('add_cards','[name="level"]'),
     // qr: $$q('add_cards','[name="qr"]')
@@ -57,7 +57,7 @@ const $q = function (foo) {
       $qa("[data-card-exercise]")[3],
     ],
     hashtag: $q("[data-card-hashtag]"),
-    // "text": $q('[data-card-text]')),
+    "text": $q('[data-card-text]'),
     time: $q('[data-card-time]'),
     // level: $q('[data-card-level]')),
     // qr: $q('[data-card-qr]')
@@ -125,6 +125,13 @@ const $q = function (foo) {
 
     });
 
+      //Eventlistener on text change in "References"
+  cardInputs.text.addEventListener("input", () => {
+    cardLabels.text.setAttribute("data-card-text", cardInputs.text.value);
+    cardLabels.text.innerText = cardLabels.text
+      .getAttribute("data-card-text").toUpperCase();
+    if (cardInputs.text.value.length === 0) cardLabels.text.innerText = "Empty";
+  });
 
   
 
