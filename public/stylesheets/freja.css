@@ -34,6 +34,11 @@ body {
   box-sizing: border-box;
 }
 
+.body-theme__dark {
+  background-color: var(--clr-dark);
+  color: var(--clr-white);
+}
+
 a {
   text-decoration: none;
   color: #000000;
