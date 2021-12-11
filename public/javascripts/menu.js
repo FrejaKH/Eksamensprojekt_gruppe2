@@ -1,5 +1,5 @@
 'use strict';
-
+/*
 export const menu = [
     {
         text: "Home",
@@ -28,5 +28,43 @@ export const menu = [
     {
         text: "About",
         url: "/about"
+    }
+];
+*/
+
+'use strict';
+
+export const menu = [
+    {
+        text: "Profil",
+        url: "/profile"
+    },
+    {
+        text: "Køb PiefitCards",
+        url: "/buycards"
+    },
+    {
+        text: "Mine PiefitCards",
+        url: "/mycards"
+    },
+    {
+        text: "Statistik",
+        url: "/statistic"
+    },
+    {
+        text: "Piefit Community",
+        url: "/community"
+    },
+    {
+        text: "Hjælp",
+        url: "/help"
+    },
+    {
+        text: "Vælg tema",
+        url: "/profile"
+    },
+    {
+        text: "Log ud",
+        url: "/logout"
     }
 ];

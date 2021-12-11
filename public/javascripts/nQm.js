@@ -28,6 +28,7 @@ export const strCharRepl = function(s, c, j) {
     }
     return ns;
 };
+/*
 export const makeMenu = function (where) {
     let nav = document.createElement('nav');
     let h1 = document.createElement('h1');
@@ -41,6 +42,24 @@ export const makeMenu = function (where) {
         link.setAttribute('href', item.url);
         let txt = document.createTextNode(item.text);
         link.appendChild(txt);
+        listitem.appendChild(link);
+        list.appendChild(listitem);
+    });
+    $(where).appendChild(nav);
+};
+*/
+
+export const makeMenu = function (where) {
+    let nav = document.createElement('nav');
+    nav.setAttribute("id", "nav");
+    let list = document.createElement('ul');
+    nav.appendChild(list);
+    menu.forEach( function(item) {
+        let listitem = document.createElement('li');
+        let link = document.createElement('a');
+        link.setAttribute('href', item.url);
+        let text = document.createTextNode(item.text);
+        link.appendChild(text);
         listitem.appendChild(link);
         list.appendChild(listitem);
     });

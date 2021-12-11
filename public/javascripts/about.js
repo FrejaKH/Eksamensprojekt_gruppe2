@@ -7,3 +7,4 @@ import { makeMenu, setTitles, setFooter } from "./nQm.js";
 //     setFooter('nml', 2021);
 // }
 // window.addEventListener('load', doSomething);
+
