@@ -41,7 +41,7 @@ export const menu = [
     },
     {
         text: "Køb PiefitCards",
-        url: "/buycards"
+        url: "#"
     },
     {
         text: "Mine PiefitCards",
@@ -49,15 +49,15 @@ export const menu = [
     },
     {
         text: "Statistik",
-        url: "/statistic"
+        url: "#"
     },
     {
         text: "Piefit Community",
-        url: "/community"
+        url: "#"
     },
     {
         text: "Hjælp",
-        url: "/help"
+        url: "#"
     },
     {
         text: "Vælg tema",

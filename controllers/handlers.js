@@ -210,7 +210,7 @@ module.exports = {
 
   async logout(req, res) {
     let session = cook.cookieObj(req, res); // create session object
-    session.set("login", { signed: true }); // unset login cookie
+    session.set("login", {expires: Date.now()}); // unset login cookie
     req.url = "/login"; // repoint req
     module.exports.login(req, res); // go to login page
   },
