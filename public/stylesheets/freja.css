@@ -341,7 +341,7 @@ li:first-child {
   margin: 0 auto;
   place-items: center;
 }
-.parent > div {
+.parent div {
   height: 150px;
   box-shadow: rgb(0 0 0 / 20%) 0px 2px 3px -2px,
     rgb(0 0 0 / 14%) 0px 2px 4px 0px, rgb(0 0 0 / 12%) 0px 2px 8px 0px;
@@ -935,6 +935,50 @@ margin:0.5rem 0;
 
 .weekicon {
   opacity:20%;
+}
+
+/* --------------------- corecard1 --------------*/
+
+#corecard1_container {
+  width:300px;
+  margin:0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#corecard1_container h2 {
+  margin:2rem;
+}
+
+
+#corecard1_container button {
+  margin:0;
+}
+
+#corecard1_container p {
+  margin: 1rem 0;
+}
+
+.text {
+  text-align: left;
+}
+
+#slider img {
+  width:236px;
+}
+
+#dots {
+  display:flex;
+}
+
+.dot {
+  width:8px;
+  height:8px;
+  border-radius:8px;
+  background-color: #000000;
+  margin:0.2rem;
 }
 
 

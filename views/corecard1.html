@@ -8,12 +8,12 @@
         <link rel='icon' type='image/gif' href='/icon.png'/>
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-        <script type='module' src='makemenu.js'></script>
+        <script type='module' src='corecard1.js'></script>
     </head>
     <body>
         <header id='menu'></header>
         <main id="main_core" class='main'>
-            <div id="h1_core" class="h1_box">
+            <div class="h1_box">
                 <a href="categories">
                     <img src="arrow_left.png" alt="pil til venstre" width="20px">
                 </a>
@@ -21,16 +21,35 @@
                     Kort: 
                 </h1>
             </div>
-            <div id="core_container">
+            <div id="corecard1_container">
                 <h2>#PiefitWashingtonDC</h2>
-                <div id="slider"></div>
-                <div id="slider_buttons"></div>
+                <div id="slider">
+                    <img class="slide" src="kort_front.png" alt="PiefitCard">
+                    <img class="slide" src="kort_back.png" alt="PiefitCard">
+                </div>
+                <div id="dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
                 <div>
-                    <p>Når du er klar til at starte din træning, skal du trykke på knappen “start træning” nedenfor. 
+                    <p  class="text">Når du er klar til at starte din træning, skal du trykke på knappen “start træning” nedenfor. 
                         Når du er færdig med træningen, skal du trykke på knappen “stop træning”.
                         På den måde kan vi anføre statistik over din træning.
                     </p>
                     <button class="btn">Start træning</button>
+                    <p  class="text">Er du i tvivl om, hvordan øvelserne skal udføres? Vi har lavet en video nedenfor, hvor du kan se alle øvelserne blive udført.
+                        God træningslyst!
+                    </p>
+                    <video width="300" controls>
+                        <source src="corecard1.mov" type="video/mov">
+                    </video>
+                    <p class="text"><strong>Beskrivelse</strong></p>
+                    <p class="text">Du har valgt et blåt kort med typen “Work/Rest” og er klar til en god træning med fokus på core.
+                        Er du i tvivl om hvad “Work/Rest” går ud på? Vi har lavet en video nedenfor, hvor vi forklarer, hvad du skal gøre.
+                        Held og lykke!</p>
+                    <video width="300"controls>
+                        <source src="workandrest.mov" type="video/mov">
+                    </video>
                 </div>
             </div>
         </main>
