@@ -23,6 +23,7 @@ const requestHandlers = {
     "/mycards": handlers.mycards,
     "/categories": handlers.categories,
     "/core": handlers.core,
+    "/corecard1": handlers.corecard1,
     "/admin": handlers.admin,
     "/notfound": handlers.notfound,
     js: handlers.js,

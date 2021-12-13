@@ -111,6 +111,11 @@ module.exports = {
     let content = "text/html; charset=utf-8";
     getAndServe(res, path, content);
   },
+  corecard1(req, res) {
+    let path = "views/corecard1.html";
+    let content = "text/html; charset=utf-8";
+    getAndServe(res, path, content);
+  },
   other(req, res) {
     let path = "views" + req.url + ".html";
     let content = "text/html; charset=utf-8";
