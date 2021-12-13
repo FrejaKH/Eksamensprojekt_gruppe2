@@ -5,46 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel='icon' type='image/gif' href='icon.png'/>
-    <link rel="stylesheet" href="dennis.css" />
+    <link rel="stylesheet" href="freja.css" />
+    <script type="module" src="velkommen.js"></script>
     <title>Velkommen</title>
   </head>
   <!-- menu -->
   <body>
-    <nav class="nav">
-      <input type="checkbox" id="nav__checkbox" class="nav__checkbox" />
-      <label for="nav__checkbox" class="nav__toggle">
-        <i class="fas fa-bars hamburger"></i>
-        <i class="fas fa-times close"></i>
-      </label>
-
-      <ul class="nav__menu">
-        <li>
-          <a href="velkommen">
-            <img class="logo"
-              src="logo_white.png"
-            />
-          </a>
-        </li>
-
-        <li><a href="profile">Profil</a></li>
-        <li><a href="#">Køb PiefitCards</a></li>
-        <li><a href="#">Mine PiefitCards</a></li>
-        <li><a href="#">Statistik</a></li>
-        <li><a href="#">Piefit Community</a></li>
-        <li><a href="#">Hjælp</a></li>
-        <li><a href="logout">Log ud</a></li>
-      </ul>
-    </nav>
+    <header id="menu"></header>
     <!-- Brugernavn -->
-    <div class="title">
+    <!-- <div class="title">
       <h1>Velkommen, <42 username 24></h1>
+    </div> -->
+<main id="main_velkommen" class="main">
+    <div class="h1_box">
+      <h1 class="title">
+          Velkommen <42 username 24>
+      </h1>
     </div>
     <!-- Grid -->
-    <div class="container">
       <div class="parent">
         <div class="grid-item-1">
           <a href="profile"> <i class="fas fa-user"></i></a>
-          <span>Min Profil</span></a>
+          <span class="span_velkommen">Min Profil</span></a>
         </div>
         <div class="grid-item-2">
           <!-- <a href="#"><i class="fas fa-shopping-cart"></i></a> -->
@@ -63,13 +45,13 @@
         </div>
         <div class="grid-item-5">
           <a href="#"><i class="fas fa-user-friends"></i></a>
-          <span>Piefit Community</span>
+          <span class="span_velkommen">Piefit Community</span>
         </div>
         <div class="grid-item-6">
           <a href="#"><i class="far fa-question-circle whitefa"></i></a>
-          <span class="white">Hjælp</span>
+          <span class="span_velkommen white">Hjælp</span>
         </div>
       </div>
-    </div>
+  </main>
   </body>
 </html>

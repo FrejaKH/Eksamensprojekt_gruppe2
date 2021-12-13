@@ -1,12 +1,12 @@
-"use strict";
-import { makeMenu, setTitles, setFooter } from "./nQm.js";
+import { createMenu } from "./makemenu.js";
 
-// const doSomething = function () {
-//     makeMenu('menu');
-//     setTitles('Native Node, Sample');
-//     setFooter('nml', 2021);
-// }
-// window.addEventListener('load', doSomething);
+const initialize = function () {
+    createMenu('menu');
+}
+
+window.addEventListener('load', initialize);
+
+
 
 const $ = function (foo) {
   return document.getElementById(foo);

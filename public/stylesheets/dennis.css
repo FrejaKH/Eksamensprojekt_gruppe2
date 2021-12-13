@@ -68,8 +68,9 @@ span {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 1em;
-  width: clamp(50%, 450px, 100%);
+  width: clamp(50%, 400px, 100%);
   margin: 0 auto;
+  place-items: center;
 }
 .parent > div {
   height: 200px;
@@ -80,6 +81,7 @@ span {
   align-content: center;
   flex-direction: column;
   align-items: center;
+  aspect-ratio: 1 / 1;
 }
 
 .grid-item-1 {
@@ -161,4 +163,9 @@ li:first-child {
   .nav__menu li {
     display: block;
   }
+
+  .parent > div {
+    width: clamp(100%, 400px, 100%);
+  }
+
 }
