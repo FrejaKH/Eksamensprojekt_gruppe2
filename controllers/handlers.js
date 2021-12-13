@@ -106,6 +106,11 @@ module.exports = {
     let content = "text/html; charset=utf-8";
     getAndServe(res, path, content);
   },
+  core(req, res) {
+    let path = "views/core.html";
+    let content = "text/html; charset=utf-8";
+    getAndServe(res, path, content);
+  },
   other(req, res) {
     let path = "views" + req.url + ".html";
     let content = "text/html; charset=utf-8";

@@ -22,6 +22,7 @@ const requestHandlers = {
     "/feedbackmsg": handlers.feedbackmsg,
     "/mycards": handlers.mycards,
     "/categories": handlers.categories,
+    "/core": handlers.core,
     "/admin": handlers.admin,
     "/notfound": handlers.notfound,
     js: handlers.js,
