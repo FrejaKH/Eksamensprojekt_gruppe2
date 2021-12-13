@@ -344,6 +344,7 @@ li:first-child {
 #main_velkommen .title {
   padding-right: 0;
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .span_velkommen {
