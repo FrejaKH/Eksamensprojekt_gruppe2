@@ -341,6 +341,11 @@ li:first-child {
   font-size: 6rem;
 }
 
+#main_velkommen .title {
+  padding-right: 0;
+  margin-bottom: 1rem;
+}
+
 .span_velkommen {
   color: black;
   margin-top: 15px;
