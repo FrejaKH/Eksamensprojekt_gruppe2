@@ -1,3 +1,10 @@
+import { createMenu } from "./makemenu.js";
+
+const initialize = function () {
+    createMenu('menu');
+}
+
+
 let i = 0;
 
 
@@ -19,6 +26,8 @@ function slideshow () {
 
 }
 
+slideshow();
+
 let j = 0;
 
 function colorDot () {
@@ -39,4 +48,5 @@ function colorDot () {
 colorDot();
 
 
-window.addEventListener('load', slideshow);
+// window.addEventListener('load', slideshow);
+window.addEventListener('load', initialize);

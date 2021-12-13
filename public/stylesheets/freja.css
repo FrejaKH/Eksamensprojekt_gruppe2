@@ -373,7 +373,7 @@ li:first-child {
 }
 
 @media only screen and (min-width: 768px) {
-  .parent > div {
+  .parent div {
     height: 200px;
     width: clamp(100%, 400px, 100%);
   }
