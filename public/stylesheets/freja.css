@@ -88,6 +88,7 @@ h1 {
 
 #main_index h1 {
   color: #ffffff;
+  margin:2rem 0;
 }
 
 #index_container #login_container {
