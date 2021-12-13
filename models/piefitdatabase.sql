@@ -1,6 +1,10 @@
+CREATE USER IF NOT exists piefituser@localhost IDENTIFIED BY 'test';
+
 drop database if exists piefitdatabase;
 create database piefitdatabase;
 use piefitdatabase;
+
+GRANT ALL privileges ON piefitdatabase.* TO piefituser@localhost;
 
 CREATE TABLE theme
 (
