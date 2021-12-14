@@ -9,6 +9,7 @@ export let createMenu = function (where) {
     nav.setAttribute("id", "nav");
     nav.classList.add("nav");
 
+    //Set burger menu
     let burger = document.createElement('input');
     burger.setAttribute("type", "checkbox");
     burger.setAttribute("id", "nav__checkbox");
@@ -31,6 +32,7 @@ export let createMenu = function (where) {
     list.className ="nav__menu";
     nav.appendChild(list);
 
+    //add logo
     let logo = document.createElement('li')
     let frontpage = document.createElement('a');
     frontpage.setAttribute("href", "velkommen");
@@ -41,8 +43,8 @@ export let createMenu = function (where) {
     logo.appendChild(frontpage);
     list.appendChild(logo);
     
-    
-        admin.forEach( function(item) {
+    //Create menu items
+    admin.forEach( function(item) {
             let listitem = document.createElement('li');
             let link = document.createElement('a');
             link.setAttribute('href', item.url);
@@ -51,8 +53,6 @@ export let createMenu = function (where) {
             listitem.appendChild(link);
             list.appendChild(listitem);
         });
-    
-
     menu.forEach( function(item) {
         let listitem = document.createElement('li');
         let link = document.createElement('a');
