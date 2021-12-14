@@ -169,6 +169,7 @@ CREATE TABLE repsandrounds_exercise
  repsandrounds_id int  NOT NULL ,
  exercise_id      int  NOT NULL ,
  reps             int NOT NULL ,
+ ordernumber      int NOT NULL ,
 
 PRIMARY KEY (repsandrounds_id, exercise_id),
 FOREIGN KEY (repsandrounds_id) REFERENCES repsandrounds (repsandrounds_id) ON DELETE CASCADE,
