@@ -38,6 +38,12 @@ const $q = function (foo) {
       $$q("add_cards", '[name="exercise3"]'),
       $$q("add_cards", '[name="exercise4"]'),
     ],
+    reps: [
+       $$q("add_cards", '[name="reps1"]'),
+       $$q("add_cards", '[name="reps2"]'),
+       $$q("add_cards", '[name="reps3"]'),
+       $$q("add_cards", '[name="reps4"]'),
+    ],
     hashtag: $$q("add_cards", '[name="hashtag"]'),
     text: $$q('add_cards','[name="text"]'),
     time: $$q('add_cards','[name="time"]'),
@@ -55,6 +61,12 @@ const $q = function (foo) {
       $qa("[data-card-exercise]")[1],
       $qa("[data-card-exercise]")[2],
       $qa("[data-card-exercise]")[3],
+    ],
+    reps: [
+      $qa("[data-card-reps]")[0],
+      $qa("[data-card-reps]")[1],
+      $qa("[data-card-reps]")[2],
+      $qa("[data-card-reps]")[3],
     ],
     hashtag: $q("[data-card-hashtag]"),
     "text": $q('[data-card-text]'),
@@ -108,6 +120,18 @@ const $q = function (foo) {
       if (item.value.length === 0) cardLabels.exercises[i].innerText = "Empty";
     });
   });
+
+   //Eventlistener on text change in "Reps"
+
+  cardInputs.reps.forEach((item, i) => {
+    item.addEventListener("input", () => {
+      cardLabels.reps[i].setAttribute("data-card-reps", item.value);
+      cardLabels.reps[i].innerText = cardLabels.reps[i]
+        .getAttribute("data-card-reps").toUpperCase();
+      if (item.value.length === 0) cardLabels.reps[i].innerText = "Empty";
+    });
+  });
+
 
 
 
