@@ -8,10 +8,6 @@ const requestHandlers = {
   // application urls here
   GET: {
     "/": handlers.home,
-    "/page1": handlers.other,
-    "/about": handlers.other,
-    "/contact": handlers.other,
-    "/contacts": handlers.contacts,
     "/login": handlers.login,
     "/signup": handlers.signup,
     "/logout": handlers.logout,
