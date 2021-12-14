@@ -31,6 +31,7 @@ const requestHandlers = {
     png: handlers.png,
     jpg: handlers.jpg,
     svg: handlers.svg,
+    mov: handlers.mov,
     ico: handlers.ico,
   },
   POST: {

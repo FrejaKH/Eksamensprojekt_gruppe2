@@ -165,6 +165,11 @@ module.exports = {
     let content = "image/svg+xml";
     getAndServe(res, path, content);
   },
+  mov(req, res) {
+    let path = "public/videos" + req.url;
+    let content = "video/mp4";
+    getAndServe(res, path, content);
+  },
   ico(req, res) {
     let path = "public" + req.url;
     let content = "image/x-icon";
