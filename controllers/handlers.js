@@ -75,6 +75,7 @@ module.exports = {
     let session = cook.cookieObj(req, res); // create session object
     let chk = session.get("login", { signed: true });
     let path = "views/velkommen.html";
+    req.url = "/velkommen";
     let content = "text/html; charset=utf-8";
     getAndServe(res, path, content, { username: chk });
   },
@@ -206,7 +207,7 @@ module.exports = {
     ) {
       let name = "" + r[0].firstname;
       session.set("login", name, { signed: true, maxAge: 86400000 * 31 }); // set login cookie, One day (24 hours) is 86 400 000 milliseconds.
-      req.url = "/"; // repoint req
+      req.url = "/velkommen"; // repoint req
       module.exports.velkommen(req, res); // go to profile page
     } else {
       module.exports.logout(req, res); // unset login cookie
@@ -216,7 +217,7 @@ module.exports = {
   async logout(req, res) {
     let session = cook.cookieObj(req, res); // create session object
     session.set("login", {expires: Date.now()}); // unset login cookie
-    req.url = "/login"; // repoint req
-    module.exports.login(req, res); // go to login page
+    req.url = "/"; // repoint req
+    module.exports.home(req, res); // go to front page
   },
 };
