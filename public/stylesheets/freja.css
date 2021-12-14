@@ -532,21 +532,59 @@ li:first-child {
 
 #main_admin {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
 #aside_menu_container {
-  min-width: fit-content;
-  width: 20%;
+  margin: 0 auto;
+  width: 90%;
 }
 
 #aside_menu {
-  width: 250px;
+  min-width: fit-content;
   background-color: #000000;
   border: 1px solid #000000;
 }
 
+#input_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#newcard {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  place-items: center;
+}
+
+@media only screen and (min-width: 1070px) {
+  #main_admin {
+    flex-direction: row;
+  }
+  
+  #aside_menu_container {
+    min-width: fit-content;
+    width: 20%;
+    margin-left:0;
+  }
+
+  #aside_menu {
+    width: 250px;
+  }
+
+  #input_container {
+    width: 40%;
+  }
+
+  #newcard {
+    width: 40%;
+  }
+}
 
 .aside_menu_box {
   height: 40px;
@@ -589,12 +627,7 @@ li:first-child {
   padding-left: 1rem;
 }
 
-#input_container {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 #add_cards,
 #references {
@@ -629,13 +662,6 @@ li:first-child {
 
 
 /*---------------------Admin Card------------------------*/
-
-#newcard {
-  display:flex;
-  flex-direction: column;
-  width: 40%;
-  gap: 1rem;
-}
 
 .h2__small {
 font-size: 1rem;
