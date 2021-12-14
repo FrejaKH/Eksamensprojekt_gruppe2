@@ -104,21 +104,31 @@
                     <input type="number" name="rest" required>
                     sec
                     <br> -->
-          <div class="form_text"><span>Exercise 1</span></div>
-          <input type="text" name="exercise1" required maxlength="30" />
-          <br />
-          <div class="form_text"><span>Exercise 2</span></div>
-          <input type="text" name="exercise2" required />
-          <br />
-          <div class="form_text"><span>Exercise 3</span></div>
-          <input type="text" name="exercise3" required />
-          <br />
-          <div class="form_text"><span>Exercise 4</span></div>
-          <input type="text" name="exercise4" required />
-          <br />
+          <div id="exercises">
+            <div class="form_text"><span>Exercise 1</span></div>
+            <input type="text" name="exercise1" required maxlength="30" />
+            <div class="form_text reps"><span>Reps</span></div>
+              <input type="number" name="reps1" required />
+            <br />
+            <div class="form_text"><span>Exercise 2</span></div>
+            <input type="text" name="exercise2" required />
+            <div class="form_text reps"><span>Reps</span></div>
+              <input type="number" name="reps2" required />
+            <br />
+            <div class="form_text"><span>Exercise 3</span></div>
+            <input type="text" name="exercise3" required />
+            <div class="form_text reps"><span>Reps</span></div>
+            <input type="number" name="reps3" required />
+            <br />
+            <div class="form_text"><span>Exercise 4</span></div>
+            <input type="text" name="exercise4" required />
+            <div class="form_text reps"><span>Reps</span></div>
+            <input type="number" name="reps4" required />
+            <br />
+          </div>
           <div class="form_text"><span>Hashtag</span></div>
           <input type="text" name="hashtag" required />
-          <h2>References</h2>
+          <h3>References</h3>
           <div class="form_text"><span>Text</span></div>
           <input type="text" name="text" required />
           <br />
@@ -136,8 +146,8 @@
         <div class="card-container card-type__core">
           <div class="card-content">
             <div class="card-header">
-              <h1 data-card-type>REPS/ROUNDS</h1>
-              <h2 data-card-rounds class="h2__small">3 ROUNDS</h2>
+              <h1 data-card-type class="type">REPS/ROUNDS</h1>
+              <h2 data-card-rounds class="h2__small type">3 ROUNDS</h2>
             </div>
             <div class="grid grid-type__repsandrounds">
               <div class="grid-item">
@@ -170,8 +180,8 @@
         <div class="card-container card-type__core">
           <div class="card-content">
             <div class="card-header">
-              <h1 data-card-benchmark="">BENCHMARK</h1>
-              <h2 data-card-text>BEGINNER-WARMUP-FINISHER</h2>
+              <h1 data-card-benchmark="" class="type">BENCHMARK</h1>
+              <h2 data-card-text class="type">BEGINNER-WARMUP-FINISHER</h2>
             </div>
             <div class="grid grid-type__benchmark">
               <div class="grid-item card-benchmark-level">

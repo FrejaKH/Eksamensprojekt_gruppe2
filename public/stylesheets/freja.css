@@ -610,10 +610,23 @@ li:first-child {
   height: 2rem;
 }
 
+#exercises input {
+  width: 8.6rem;
+}
+
+#exercises input:nth-child(5n+4) {
+  width: 2rem;
+}
+
 .form_text {
   width: 7rem;
   display: inline-block;
 }
+
+.reps {
+  width: 2rem;
+}
+
 
 /*---------------------Admin Card------------------------*/
 
@@ -646,8 +659,13 @@ position:relative;
 background-color: var(--clr-blue);
 }
 
+.card-header h1{
+  text-decoration: none;
+}
+
 .card-header h2{
   line-height: 1.5;
+  text-decoration: none;
 }
 
 .card-header::after{
@@ -737,7 +755,6 @@ content:'';
   opacity: 1;
 }
 
-/* --------------------- feedback message --------------*/ 
 
 
 /* --------------------- mycards --------------*/
