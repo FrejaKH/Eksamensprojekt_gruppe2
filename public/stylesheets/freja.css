@@ -34,6 +34,24 @@ body {
   box-sizing: border-box;
 }
 
+h1 { font-size: 2rem}
+h2 { font-size: 1.25rem}
+
+h1,
+h2 {
+font-family: "Bebas Neue Pro Expanded", "Bebas Neue", sans-serif, cursive;
+font-weight: 400;
+line-height: 1;
+}
+
+h3,
+h4,
+h6 {
+font-family: "Lato", sans-serif;
+font-weight: bold;
+color: var(--clr-black);
+}
+
 .body-theme__dark {
   background-color: var(--clr-dark);
   color: var(--clr-white);
@@ -72,14 +90,6 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-h1 {
-  font-family: "Bebas Neue", cursive;
-  font-family: ;
-  font-size: 1.625rem;
-  color: #000000;
-  font-weight: 400;
 }
 
 
@@ -296,6 +306,9 @@ li:first-child {
 
 /* ----------------------------Velkommen------------------------------*/
 
+.welcome_title {
+  padding-bottom:1rem;
+}
 
 .white {
   color: var(--clr-white);
@@ -382,7 +395,7 @@ li:first-child {
   display:flex;
   justify-content:space-between;
   align-items: center;
-  padding-top:4rem;
+  padding-top:2.5rem;
 }
 
 .h1_box a{
@@ -611,26 +624,8 @@ li:first-child {
   gap: 1rem;
 }
 
-h1 { font-size: 2.5rem}
-h2 { font-size: 1.25rem}
-
 .h2__small {
 font-size: 1rem;
-}
-
-h1,
-h2 {
-font-family: "Bebas Neue Pro Expanded", "Bebas Neue", sans-serif, cursive;
-font-weight: 400;
-line-height: 1;
-}
-
-h3,
-h4,
-h6 {
-font-family: "Lato", sans-serif;
-font-weight: bold;
-color: var(--clr-black);
 }
 
 .card-container {
@@ -756,7 +751,7 @@ content:'';
 #mycards_container,
 #categories_container {
   width:17.75rem;
-  margin:0 auto;
+  margin:1rem auto;
   display: flex;
   flex-direction:column;
   justify-content: center;
@@ -808,8 +803,9 @@ margin:0.5rem 0;
   text-align: left;
 }
 
-#code h2 {
+#code h3 {
   font-size:1rem;
+  margin-top:1rem;
 }
 
 #mycards_container input {
