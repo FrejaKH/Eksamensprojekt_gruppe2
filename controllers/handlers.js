@@ -16,9 +16,9 @@ const isLoggedIn = async function (req, res) {
   let session = cook.cookieObj(req, res); // create session object
   let chk = session.get("login", { signed: true });
   if (chk) {
-    let exp = new Date();
-    exp.setMinutes(exp.getMinutes() + 10); //Refresh expiration with 10 minutes
-    session.set("login", { signed: true, expires: exp }); //set login cookie
+    //let exp = new Date();
+    //exp.setMinutes(exp.getMinutes() + 10); //Refresh expiration with 10 minutes
+    //session.set("login", { signed: true, expires: exp }); //set login cookie
     return true;
   } else {
     return false;
