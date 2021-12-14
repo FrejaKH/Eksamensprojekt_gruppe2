@@ -1,38 +1,5 @@
 'use strict';
-/*
-export const menu = [
-    {
-        text: "Home",
-        url: "/"
-    },
-    {
-        text: "Page",
-        url: "/page1"
-    },
-    {
-        text: "Contacts",
-        url: "/contacts"
-    },
-    {
-        text: "New Contact",
-        url: "/contact"
-    },
-    {
-        text: "Login",
-        url: "/login"
-    },
-    {
-        text: "Logout",
-        url: "/logout"
-    },
-    {
-        text: "About",
-        url: "/about"
-    }
-];
-*/
 
-'use strict';
 
 export const menu = [
     {
@@ -68,3 +35,11 @@ export const menu = [
         url: "/logout"
     }
 ];
+
+export const admin = [
+    {
+        text: "Admin",
+        url: "/admin"
+    }
+];
+

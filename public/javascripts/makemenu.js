@@ -1,6 +1,8 @@
 
 import { $} from "./nQm.js";
-import {menu} from './menu.js';
+import {menu, admin} from './menu.js';
+
+
 
 export let createMenu = function (where) {
     let nav = document.createElement('nav');
@@ -39,6 +41,18 @@ export let createMenu = function (where) {
     logo.appendChild(frontpage);
     list.appendChild(logo);
     
+    
+        admin.forEach( function(item) {
+            let listitem = document.createElement('li');
+            let link = document.createElement('a');
+            link.setAttribute('href', item.url);
+            let text = document.createTextNode(item.text);
+            link.appendChild(text);
+            listitem.appendChild(link);
+            list.appendChild(listitem);
+        });
+    
+
     menu.forEach( function(item) {
         let listitem = document.createElement('li');
         let link = document.createElement('a');
