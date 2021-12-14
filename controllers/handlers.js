@@ -27,13 +27,14 @@ const isLoggedIn = async function (req, res) {
 };
 
 //returns true or false
-const isAdmin = async function (req, res){
-    let session = cook.cookieObj(req, res);
-    let admin = session.get("admin", {signed: true});
-    if(admin) {
-      return true;
-    }
-    else { return false;}
+const isAdmin = async function (req, res) {
+  let session = cook.cookieObj(req, res);
+  let admin = session.get("admin", { signed: true });
+  if (admin) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const getAndServe = async function (res, path, contentType) {
