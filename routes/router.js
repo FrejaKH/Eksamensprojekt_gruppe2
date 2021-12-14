@@ -32,7 +32,6 @@ const requestHandlers = {
     jpg: handlers.jpg,
     svg: handlers.svg,
     ico: handlers.ico,
-    mov: handlers.mov,
   },
   POST: {
     "/contact": handlers.receiveContacts,

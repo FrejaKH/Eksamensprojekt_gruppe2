@@ -151,11 +151,6 @@ module.exports = {
     let content = "image/x-icon";
     getAndServe(res, path, content);
   },
-  mov(req, res) {
-    let path = "public/videos" + req.url;
-    let content = "video/mov";
-    getAndServe(res, path, content);
-  },
 
   notfound(req, res) {
     console.log(`Handler 'notfound' was called for route ${req.url}`);

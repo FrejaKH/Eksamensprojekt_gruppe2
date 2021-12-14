@@ -53,10 +53,6 @@ a {
   margin-top:2rem;
 }
 
-
-
-
-
 #body_index {
   background-image: url("frontpage_bg.jpg");
   background-repeat: no-repeat;
@@ -80,6 +76,7 @@ a {
 
 h1 {
   font-family: "Bebas Neue", cursive;
+  font-family: ;
   font-size: 1.625rem;
   color: #000000;
   font-weight: 400;
@@ -623,9 +620,8 @@ font-size: 1rem;
 
 h1,
 h2 {
-font-family: "Bebas Neue Pro Expanded", sans-serif;
+font-family: "Bebas Neue Pro Expanded", "Bebas Neue", sans-serif, cursive;
 font-weight: 400;
-color: var(--clr-red);
 line-height: 1;
 }
 
@@ -844,6 +840,10 @@ margin:0.5rem 0;
   align-items: center;
 }
 
+#categories_container p {
+  margin:1.5rem 0;
+}
+
 
 #core {
   background-color: #c6d9db;
@@ -971,6 +971,7 @@ margin:0.5rem 0;
 
 #dots {
   display:flex;
+  margin-top:0.5rem;
 }
 
 .dot {

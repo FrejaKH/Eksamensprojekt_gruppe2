@@ -9,7 +9,7 @@ let i = 0;
 
 
 function slideshow () {
-
+    let slider = document.getElementById("slider");
     let slides = Array.from(document.getElementsByClassName("slide"));
     slides.forEach(slide => {
         return slide.style.display = "none";
