@@ -53,4 +53,11 @@ module.exports = {
     let rows = await dbh.query(sql);
     return rows;
   },
+
+  async isAdmin(obj) {
+    const dbh = await maria.createConnection(dbp);
+    let sql = `select isadmin from user where email = '${obj.POST.email}'`;
+    let rows = await dbh.query(sql);
+    return rows;
+  },
 };

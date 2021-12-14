@@ -15,7 +15,25 @@ const models = require("../models/handleSundry"); // models are datahandlers
 const isLoggedIn = async function (req, res) {
   let session = cook.cookieObj(req, res); // create session object
   let chk = session.get("login", { signed: true });
-  return chk == undefined ? false : true;
+  if (chk) {
+    let exp = new Date();
+    exp.setMinutes(exp.getMinutes() + 10); //Refresh expiration with 10 minutes
+    session.set("login", { signed: true, expires: exp }); //set login cookie
+    return true;
+  } else {
+    return false;
+  }
+  // return chk == undefined ? false : true;
+};
+
+//returns true or false
+const isAdmin = async function (req, res){
+    let session = cook.cookieObj(req, res);
+    let admin = session.get("admin", {signed: true});
+    if(admin) {
+      return true;
+    }
+    else { return false;}
 };
 
 const getAndServe = async function (res, path, contentType) {
@@ -174,14 +192,27 @@ module.exports = {
   },
 
   async admin(req, res) {
-    if (!(await isLoggedIn(req, res))) {
-      req.url = "/login";
-      module.exports.login(req, res);
+    if (!(await isAdmin(req, res))) {
+      req.url = "/velkommen";
+      module.exports.velkommen(req, res);
     }
-    let content = "text/html; charset=utf-8";
-    let path = "views/admin.html";
-    getAndServe(res, path, content); // extra arg for templater
+    else {
+      let content = "text/html; charset=utf-8";
+      let path = "views/admin.html";
+      getAndServe(res, path, content); // extra arg for templater
+    }
   },
+
+  // async admin(req, res) {
+  //   if ((await isAdmin(req, res))) {
+  //     let path = "views/admin.html";
+  //     getAndServe(res, path, content); // extra arg for templater
+  //   }
+  //   else {
+  //     req.url = "/velkommen";
+  //     module.exports.velkommen(req, res);
+  //   }
+  // },
 
   async receiveContacts(req, res, data) {
     let obj = lib.makeWebArrays(req, data); // home made GET and POST objects
@@ -201,12 +232,25 @@ module.exports = {
     let session = cook.cookieObj(req, res); // create session object
     let obj = lib.makeWebArrays(req, data); // home made GET and POST objects
     let r = await models.verify(obj);
+    let isAdminResult = await models.isAdmin(obj);
     if (
       r.length == 1 &&
       (await bcrypt.compare(obj.POST.password, "" + r[0].password))
     ) {
       let name = "" + r[0].firstname;
-      session.set("login", name, { signed: true, maxAge: 86400000 * 31 }); // set login cookie, One day (24 hours) is 86 400 000 milliseconds.
+      let exp = new Date();
+      exp.setMinutes(exp.getMinutes() + 10);
+      session.set("login", name, {
+        signed: true,
+        expires: exp,
+        maxAge: 86400000 * 31,
+      }); // set login cookie, One day (24 hours) is 86 400 000 milliseconds.
+
+      if (isAdminResult.length == 1 && isAdminResult[0].isadmin == 1) {
+        session.set("admin", true, { signed: true, expires: exp }); //set isAdmin cookie true
+      } else {
+        session.set("admin", false, { signed: true, expires: Date.now() }); //set isAdmin cookie false and remove it
+      }
       req.url = "/velkommen"; // repoint req
       module.exports.velkommen(req, res); // go to profile page
     } else {
@@ -216,7 +260,8 @@ module.exports = {
 
   async logout(req, res) {
     let session = cook.cookieObj(req, res); // create session object
-    session.set("login", {expires: Date.now()}); // unset login cookie
+    session.set("login", { signed: true, expires: Date.now() }); // unset login cookie
+    session.set("admin", { signed: true, expires: Date.now() }); // unset admin cookie)
     req.url = "/"; // repoint req
     module.exports.home(req, res); // go to front page
   },
