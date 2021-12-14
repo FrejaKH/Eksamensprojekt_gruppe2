@@ -90,11 +90,24 @@ module.exports = {
     let content = "text/html; charset=utf-8";
     getAndServe(res, path, content, { username: chk });
   },
+  // async velkommen(req, res) {
+  //       let session = cook.cookieObj(req, res); // create session object
+  //       let chk = session.get("login", { signed: true });
+  //       let path = "views/velkommen.html";
+  //       let content = "text/html; charset=utf-8";
+
+  //       if ((await isLoggedIn(req, res))) {
+  //       getAndServe(res, path, content, { username: chk });
+  //       }
+  //       else {
+  //         req.url = "/login";
+  //     module.exports.login(req, res);
+  //       }    
+  // },
   velkommen(req, res) {
     let session = cook.cookieObj(req, res); // create session object
     let chk = session.get("login", { signed: true });
     let path = "views/velkommen.html";
-    req.url = "/velkommen";
     let content = "text/html; charset=utf-8";
     getAndServe(res, path, content, { username: chk });
   },
@@ -136,11 +149,7 @@ module.exports = {
     let content = "text/html; charset=utf-8";
     getAndServe(res, path, content);
   },
-  other(req, res) {
-    let path = "views" + req.url + ".html";
-    let content = "text/html; charset=utf-8";
-    getAndServe(res, path, content);
-  },
+
   js(req, res) {
     let path = "public/javascripts" + req.url;
     let content = "application/javascript; charset=utf-8";
@@ -182,43 +191,21 @@ module.exports = {
     res.end();
   },
 
-  async contacts(req, res) {
+  async admin(req, res) {
     if (!(await isLoggedIn(req, res))) {
       req.url = "/login";
       module.exports.login(req, res);
-    }
-    let r = await models.showContacts(req, res);
-    let content = "text/html; charset=utf-8";
-    let path = "views/displayContacts.html";
-    getAndServe(res, path, content, {
-      contacts: r,
-      a: "right aside",
-      b: "left aside",
-    }); // extra arg for templater
-  },
-
-  async admin(req, res) {
-    if (!(await isAdmin(req, res))) {
-      req.url = "/velkommen";
-      module.exports.velkommen(req, res);
-    }
-    else {
-      let content = "text/html; charset=utf-8";
-      let path = "views/admin.html";
-      getAndServe(res, path, content); // extra arg for templater
+    } else {
+      if (!(await isAdmin(req, res))) {
+        req.url = "/velkommen";
+        module.exports.velkommen(req, res);
+      } else {
+        let content = "text/html; charset=utf-8";
+        let path = "views/admin.html";
+        getAndServe(res, path, content); // extra arg for templater
+      }
     }
   },
-
-  // async admin(req, res) {
-  //   if ((await isAdmin(req, res))) {
-  //     let path = "views/admin.html";
-  //     getAndServe(res, path, content); // extra arg for templater
-  //   }
-  //   else {
-  //     req.url = "/velkommen";
-  //     module.exports.velkommen(req, res);
-  //   }
-  // },
 
   async receiveContacts(req, res, data) {
     let obj = lib.makeWebArrays(req, data); // home made GET and POST objects
