@@ -105,7 +105,9 @@
                     <input type="number" name="rest" required>
                     sec
                     <br> -->
+                    <datalist id="exercise-list"><42 exercises 24></datalist>
           <div id="exercises">
+            
             <div class="form_text"><span>Exercise 1</span></div>
             <input type="text" name="exercise1" required maxlength="30" />
             <div class="form_text reps"><span>Reps</span></div>
@@ -137,7 +139,7 @@
           <input type="text" name="time" required />
           <br />
           <div class="form_text"><span>Diffuculty level</span></div>
-          <input type="number" min="1" max="5" name="level" required />
+          <input type="number" min="1" max="5" name="level" value="3" pattern="^[1-5]{1}" required />
           <br />
           <div class="form_text"><span>QR kode</span></div>
           <input type="url" name="qr" required />

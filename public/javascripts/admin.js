@@ -119,7 +119,7 @@ const $q = function (foo) {
 
   //Insert exercise list to inputs
   cardInputs.exercises.forEach((item, i) => {
-    item.setAttribute("list", exerciseDataList.id);
+    item.setAttribute("list", "exercise-list");
   });
 
   //Eventlistener on text change in "Type"
