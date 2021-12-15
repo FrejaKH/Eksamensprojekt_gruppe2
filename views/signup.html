@@ -1,41 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset='utf-8'/>
-        <title class='title'>Sign up til Piefit</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel='stylesheet' href='freja.css'/>
-        <link rel='icon' type='image/gif' href='icon.png'/>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-        <script type='module' src='login.js'></script>
-    </head>
-    <body>
-        <!-- <header id='menu'></header> -->
-        <main id="main_signup" class='main'>
-            <section>
-                <div id="signup_container">
-                    <div class="h1_box">
-                        <a href="/">
-                            <img src="arrow_left.png" alt="pil til venstre" width="20px">
-                        </a>
-                        <h1 id="h1_login" class="title">Sign up</h1>
-                      </div>
-                    <p>Venligst indtast dine oplysninger for at oprette en bruger hos Piefit</p>
-                    <form method="post" action="/signup">
-                    <div id="forms">
-                        <input id="firstname" class="signup_input" type="text" name="firstname" placeholder="Fornavn*" required/>
-                        <input id="lastname" class="signup_input" type="text" name="lastname" placeholder="Efternavn*" required/>
-                        <input id="email" class="signup_input" type="email" name="email" placeholder="E-mail*" required/>
-                        <input id="phonenumber" class="signup_input" type="number" name="phonenumber" placeholder="Telefonnummer*" required/>
-                        <input id="password" class="signup_input" type="password" name="password" placeholder="Adgangskode*" required/>
-                        <input id="repeat_password" class="signup_input" type="password" name="repeat_password" placeholder="Gentag adgangskode*" required/>
-                        <p>Glemt password?</p>
-                        <input id="submit_btn" type="submit" value="Opret bruger"/>
-                    </div>
-                </form>
-                </div>
-            </section>
-        </main>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <title class="title">Sign up til Piefit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="freja.css" />
+    <link rel="icon" type="image/gif" href="icon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="login.js"></script>
+  </head>
+  <body>
+    <!-- <header id='menu'></header> -->
+    <main id="main_signup" class="main">
+      <section>
+        <div id="signup_container">
+          <div class="h1_box">
+            <a href="/">
+              <img src="arrow_left.png" alt="pil til venstre" width="20px" />
+            </a>
+            <h1 id="h1_login" class="title">Sign up</h1>
+          </div>
+          <p>
+            Venligst indtast dine oplysninger for at oprette en bruger hos
+            Piefit
+          </p>
+          <form method="post" action="/signup">
+            <div id="forms">
+              <input
+                id="firstname"
+                class="signup_input"
+                type="text"
+                name="firstname"
+                placeholder="Fornavn*"
+                required
+              />
+              <input
+                id="lastname"
+                class="signup_input"
+                type="text"
+                name="lastname"
+                placeholder="Efternavn*"
+                required
+              />
+              <input
+                id="email"
+                class="signup_input"
+                type="email"
+                name="email"
+                placeholder="E-mail*"
+                required
+              />
+              <input
+                id="phonenumber"
+                class="signup_input"
+                type="number"
+                name="phonenumber"
+                placeholder="Telefonnummer*"
+                required
+              />
+              <input
+                id="password"
+                class="signup_input"
+                type="password"
+                name="password"
+                placeholder="Adgangskode*"
+                required
+              />
+              <input
+                id="repeat_password"
+                class="signup_input"
+                type="password"
+                name="repeat_password"
+                placeholder="Gentag adgangskode*"
+                required
+              />
+              <p>Glemt password?</p>
+              <input id="submit_btn" type="submit" value="Opret bruger" />
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script src="themeSwitcher.js"></script>
+  </body>
 </html>

@@ -17,15 +17,13 @@
     <script type="module" src="profile.js"></script>
   </head>
   <body>
-    <header id='menu'></header>
+    <header id="menu"></header>
     <main id="main_profile" class="main">
       <div class="h1_box">
         <a href="velkommen">
-            <img src="arrow_left.png" alt="pil til venstre" width="20px">
+          <img src="arrow_left.png" alt="pil til venstre" width="20px" />
         </a>
-        <h1 class="title">
-            Min profil
-        </h1>
+        <h1 class="title">Min profil</h1>
       </div>
       <div id="profile_picture">
         <img src="user.png" alt="user" />
@@ -48,8 +46,15 @@
         </div>
         <div id="theme">
           <p>Tema</p>
+          <div class="theme-switch-wrapper">
+            <label class="theme-switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="slider round"></div>
+            </label>
+          </div>
         </div>
       </div>
     </main>
+    <script src="themeSwitcher.js"></script>
   </body>
 </html>
