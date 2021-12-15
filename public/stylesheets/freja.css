@@ -20,8 +20,8 @@
   --clr-dark: #394356;
   --font-color: #424242;
   --bg-color: #fff;
-  --link-color: #00fd6a;
-  --h1-color: #f80ab1;
+  --link-color: var(--clr-black);
+  --h1-color: var(--clr-black);
 }
 
 [data-theme="dark"] {
@@ -394,6 +394,7 @@ li:first-child {
   padding-right: 0;
   margin-bottom: 1rem;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .span_velkommen {
@@ -475,7 +476,7 @@ li:first-child {
 
 .title {
   margin: 0 auto;
-  padding-right: 20px;
+  padding-right: 3rem;
 }
 
 #main_profile {
