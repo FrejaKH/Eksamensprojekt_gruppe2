@@ -1109,12 +1109,13 @@ li:first-child {
 }
 
 .fa-arrow-left {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--font-color);
+  margin-left:1rem;
 }
 
 .fa-arrow-right {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--clr-black);
 }
 
