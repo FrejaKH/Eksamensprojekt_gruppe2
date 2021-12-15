@@ -18,21 +18,22 @@
   --clr-black: #000000;
   --clr-white: #ffffff;
   --clr-dark: #394356;
-  --font-color: #424242;
-  --bg-color: #fff;
-  --link-color: var(--clr-black);
-  --h1-color: var(--clr-black);
+  --clr-link: #000000;
+  --clr-h1: #000000;
+  --clr-font: #000000;
+  --clr-span-white: #ffffff;
 }
 
 [data-theme="dark"] {
-  --font-color: #00fd6a;
-  --bg-color: #161625;
-  --link-color: #00fd6a;
-  --h1-color: #f80ab1;
+  --font-color: #ffffff;
+  --clr-white: #394356;
+  --clr-h1: #ffffff;
+  --clr-font: #ffffff;
+  --clr-span-white: #ffffff;
 }
 
 body {
-  background-color: var(--bg-color);
+  background-color: var(--clr-white);
   color: var(--font-color);
   width: 100%;
   padding: 0;
@@ -46,6 +47,12 @@ body {
   display: flex;
   align-items: center;
 }
+
+.theme-switch-wrapper span {
+  margin: 0 10px 0 0;
+  color: var(--clr-black);
+}
+
 .theme-switch {
   display: inline-block;
   height: 34px;
@@ -103,7 +110,7 @@ input:checked + .slider:before {
 }
 
 h1 {
-  color: var(--h1-color);
+  color: var(--clr-h1);
   font-size: 2rem;
 }
 h2 {
@@ -132,7 +139,7 @@ h6 {
 
 a {
   text-decoration: none;
-  color: var(--link-color);
+  color: var(--clr-link);
 }
 
 .btn {
@@ -382,11 +389,11 @@ li:first-child {
 }
 
 .white {
-  color: var(--clr-white);
+  color: var(--clr-span-white);
 }
 
 .whitefa {
-  color: var(--clr-white);
+  color: var(--clr-span-white);
   font-size: 6rem;
 }
 
@@ -398,12 +405,7 @@ li:first-child {
 }
 
 .span_velkommen {
-  color: black;
   margin-top: 15px;
-}
-
-.white {
-  color: var(--clr-white);
 }
 
 .container {
@@ -470,13 +472,9 @@ li:first-child {
   padding-top: 2.5rem;
 }
 
-.h1_box a {
-  padding-left: 1.5rem;
-}
-
 .title {
   margin: 0 auto;
-  padding-right: 3rem;
+  padding-right: 2rem;
 }
 
 #main_profile {
@@ -566,10 +564,6 @@ li:first-child {
   background-color: #dae889;
   border: none;
   cursor: pointer;
-}
-
-#changeinfo_container h1 {
-  color: #000000;
 }
 
 /*---------------------Admin--------------------------*/
@@ -791,8 +785,6 @@ li:first-child {
   line-height: 2.5;
   color: var(--clr-red);
 }
-
-
 
 .grid-type__workandrest {
   grid-template-columns: 1fr;
@@ -1098,6 +1090,24 @@ li:first-child {
   border-radius: 8px;
   background-color: #000000;
   margin: 0.2rem;
+}
+
+/* --------------------- Fon awesome styles --------------*/
+
+.fa-user-circle {
+  font-size: 10rem;
+  margin: 20px 0 20px 0;
+  color: var(--font-color);
+}
+
+.fa-arrow-left {
+  font-size: 2rem;
+  color: var(--font-color);
+}
+
+.fa-arrow-right {
+  font-size: 2rem;
+  color: var(--clr-black);
 }
 
 /* ---------------------Media query-------------------------------------*/
