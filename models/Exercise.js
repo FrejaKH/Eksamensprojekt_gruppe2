@@ -7,6 +7,6 @@ module.exports = class Exercise {
   }
 
   toString() {
-    return `<option value="${this.id}">${this.name}</option>`;
+    return `<option data-exercise-id="${this.id}">${this.name}</option>`;
   }
 };

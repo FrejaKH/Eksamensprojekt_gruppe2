@@ -20,7 +20,7 @@ exports.doTheMagic = function (data, obj) {
       if (doo === "exercises") {
         for (let e of obj[doo]) {
           //  loop through obj (array)
-          let exercise = new Exercise(e.name, e.exercise_id);
+          let exercise = new Exercise(e.exercise_id, e.name);
           s += exercise.toString();
         }
       } else if (doo === "userinfo") {

@@ -40,7 +40,7 @@ module.exports = {
 
   async listExercises() {
     const dbh = await maria.createConnection(dbp);
-    const rows = await dbh.query(`select * from exercise`);
+    const rows = await dbh.query(`select exercise_id, name from exercise`);
     return rows;
   },
 
