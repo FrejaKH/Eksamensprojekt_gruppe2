@@ -78,12 +78,12 @@
         </div>
       </div>
       <div id="input_container">
-        <form id="add_cards" action="#" method="#">
+        <form id="add_cards" action="/newcard" method="POST">
           <div class="form_text"><span>Type</span></div>
           <select type="text" name="type" required>
-            <option>AMRAP</option>
-            <option>REPS/ROUNDS</option>
-            <option>WORK/REST</option>
+            <option value="amrap">AMRAP</option>
+            <option value="repsandrounds" selected>REPS/ROUNDS</option>
+            <option value="workandrest">WORK/REST</option>
           </select>
           <br />
           <div class="form_text"><span>Rounds</span></div>
@@ -140,6 +140,8 @@
           <br />
           <div class="form_text"><span>QR kode</span></div>
           <input type="url" name="qr" required />
+          
+          <input id="submit_btn" type="submit" value="Opret nyt kort" />
         </form>
       </div>
       <div id="newcard">

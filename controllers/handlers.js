@@ -214,11 +214,18 @@ module.exports = {
     module.exports.home(req, res); // go to home page
   },
 
+  async newCard(req, res, data) {
+    let obj = lib.makeWebArrays(req, data); // home made GET and POST objects
+    await models.createCard(obj);
+    req.url = "/admin"; // repoint req
+    module.exports.admin(req, res); // stay on admin page
+  },
+
   async signupUser(req, res, data) {
     let obj = lib.makeWebArrays(req, data); // home made GET and POST objects
     await models.createUser(obj);
     req.url = "/"; // repoint req
-    module.exports.login(req, res); // go to home page
+    module.exports.login(req, res); // go to login page
   },
 
   async verifyLogin(req, res, data) {

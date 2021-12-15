@@ -15,6 +15,24 @@ module.exports = {
   //     let sql = `insert into user values('${obj.POST.name}', '${obj.POST.email}', '${obj.POST.phone}', '${hashed}')`;
   //     await dbh.query(sql);
   // },
+  async createCard(obj) {
+    //creating variables
+    let hashtag = obj.POST.hashtag;
+    let rounds = obj.POST.rounds;
+    let videoURL = obj.POST.qr;
+    let difficulty = obj.POST.level;
+    let category = 1; //hardcode Core category
+    let type = obj.POST.type;
+
+    const dbh = await maria.createConnection(dbp);
+    let sqlCard = `
+    INSERT INTO card (name, difficulty, video_url, type, category_id) 
+    VALUES
+    ('${hashtag}',	${difficulty},	'${videoURL}', '${type}',	${category})
+    `;
+
+    await dbh.query(sqlCard);
+  },
   async updContacts(obj) {
     const dbh = await maria.createConnection(dbp);
     let hashed = await bcrypt.hash(obj.POST.password, 10); //Password + salt (1)
@@ -60,4 +78,6 @@ module.exports = {
     let rows = await dbh.query(sql);
     return rows;
   },
+
+
 };

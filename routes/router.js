@@ -34,6 +34,7 @@ const requestHandlers = {
     "/contact": handlers.receiveContacts,
     "/login": handlers.verifyLogin,
     "/signup": handlers.signupUser,
+    "/newcard": handlers.newCard,
   },
 };
 
