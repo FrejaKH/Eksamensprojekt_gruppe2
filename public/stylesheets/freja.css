@@ -753,11 +753,15 @@ li:first-child {
 .card-header {
   display: flex;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
+
 .card-header .logo {
-  width: 2.5rem;
+  height: 2.5rem;
+  aspect-ratio: 1 / 1;
 }
 
 .card-header h1 {
