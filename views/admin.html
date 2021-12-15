@@ -77,6 +77,7 @@
           </a>
         </div>
       </div>
+      <!-- INPUT SECTION -->
       <div id="input_container">
         <form id="add_cards" action="/newcard" method="POST">
           <div class="form_text"><span>Type</span></div>
@@ -108,22 +109,22 @@
             <div class="form_text"><span>Exercise 1</span></div>
             <input type="text" name="exercise1" required maxlength="30" />
             <div class="form_text reps"><span>Reps</span></div>
-            <input type="number" name="reps1" required />
+            <input type="number" name="reps1" min="1"  required />
             <br />
             <div class="form_text"><span>Exercise 2</span></div>
             <input type="text" name="exercise2" required />
             <div class="form_text reps"><span>Reps</span></div>
-            <input type="number" name="reps2" required />
+            <input type="number" name="reps2" min="1"  required />
             <br />
             <div class="form_text"><span>Exercise 3</span></div>
             <input type="text" name="exercise3" required />
             <div class="form_text reps"><span>Reps</span></div>
-            <input type="number" name="reps3" required />
+            <input type="number" name="reps3" min="1"  required />
             <br />
             <div class="form_text"><span>Exercise 4</span></div>
             <input type="text" name="exercise4" required />
             <div class="form_text reps"><span>Reps</span></div>
-            <input type="number" name="reps4" required />
+            <input type="number" name="reps4" min="1"  required />
             <br />
           </div>
           <div class="form_text"><span>Hashtag</span></div>
@@ -144,6 +145,7 @@
           <input id="submit_btn" type="submit" value="Opret nyt kort" />
         </form>
       </div>
+      <!-- CARD FRONT SECTION -->
       <div id="newcard">
         <div class="card-container card-type__core">
           <div class="card-content">
@@ -152,7 +154,7 @@
                 <h1 data-card-type class="type">REPS/ROUNDS</h1>
                 <h2 data-card-rounds class="h2__small type">3 ROUNDS</h2>
               </div>
-              <img src="logo.png" class="logo">
+              <img src="logo.png" class="logo" />
             </div>
             <div class="grid grid-type__repsandrounds">
               <div class="grid-item">
@@ -161,10 +163,10 @@
               <div class="grid-item card-duration">
                 <h2 data-card-duration="">REPS</h2>
               </div>
-              <div  class="grid-item card-exercise">
+              <div class="grid-item card-exercise">
                 <h3 data-card-exercise="">EXERCISE 1</h3>
               </div>
-              <div  class="grid-item card-reps">
+              <div class="grid-item card-reps">
                 <h3 data-card-reps="">X</h3>
               </div>
               <div class="grid-item card-exercise">
@@ -189,7 +191,7 @@
             <div data-card-hashtag class="card-hashtag">#PiefitYOURHASHTAG</div>
           </div>
         </div>
-
+        <!-- CARD BACK SECTION -->
         <div class="card-container card-type__core">
           <div class="card-content">
             <div class="card-header">
