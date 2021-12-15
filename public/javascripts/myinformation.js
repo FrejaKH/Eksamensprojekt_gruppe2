@@ -1,7 +1,7 @@
 import { createMenu } from "./makemenu.js";
 
 const initialize = function () {
-    createMenu('menu');
-}
+  createMenu("menu");
+};
 
-window.addEventListener('load', initialize);
+window.addEventListener("load", initialize);
