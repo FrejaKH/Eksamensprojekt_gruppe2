@@ -601,6 +601,7 @@ li:first-child {
   gap: 0.5rem;
 }
 
+
 #aside_menu_container {
   margin: 0 auto;
   width: 90%;
@@ -630,6 +631,10 @@ li:first-child {
 @media only screen and (min-width: 1070px) {
   #main_admin {
     flex-direction: row;
+    
+  }
+  #main_admin{
+    width: clamp(1080px, 75%, 100%);
   }
 
   #aside_menu_container {
