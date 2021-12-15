@@ -1,3 +1,5 @@
+
+
 -- all cards of type workandrest
 SELECT c.name, c.difficulty, c.video_url, wr.rounds, wr.timeactive, wr.timerest from card c 
 LEFT JOIN workandrest wr ON c.card_id = wr.card_id
@@ -66,3 +68,6 @@ INNER JOIN benchmark b ON ab.benchmark_id = b.benchmark_id
 
 WHERE c.type = "amrap"
 ORDER BY c.card_id ASC, ab.rounds ASC;
+
+-- All exercises, to be able to reference them, when making new cards.
+SELECT * from exercise;
