@@ -115,8 +115,7 @@ const $q = function (foo) {
   cardInputs.exercises.forEach((item, i) => {
     item.addEventListener("input", () => {
       cardLabels.exercises[i].setAttribute("data-card-exercise", item.value);
-      cardLabels.exercises[i].innerText = cardLabels.exercises[i]
-        .getAttribute("data-card-exercise").toUpperCase();
+      cardLabels.exercises[i].innerText = cardLabels.exercises[i].getAttribute("data-card-exercise").toUpperCase();
       if (item.value.length === 0) cardLabels.exercises[i].innerText = "Empty";
     });
   });
