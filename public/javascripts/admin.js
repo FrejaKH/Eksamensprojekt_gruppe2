@@ -80,7 +80,7 @@ const $q = function (foo) {
 
   //Eventlistener on text change in "Type"
   cardInputs.type.addEventListener("input", () => {
-    cardLabels.type.setAttribute("data-card-type", cardInputs.type.value);
+    cardLabels.type.setAttribute("data-card-type", cardInputs.type.options[cardInputs.type.selectedIndex].text);
     cardLabels.type.innerText = cardLabels.type
       .getAttribute("data-card-type").toUpperCase();
     if (cardInputs.type.value.length === 0) cardLabels.type.innerText = "Empty";
