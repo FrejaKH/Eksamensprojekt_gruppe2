@@ -247,7 +247,7 @@ a {
 
 .nav {
   background: black;
-  padding: 20px;
+  padding:1rem;
 }
 .nav__toggle {
   position: absolute;
@@ -268,7 +268,6 @@ input[type="checkbox"] {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
-  margin: 0 1rem 0 1rem;
   padding: 0;
 }
 li {
