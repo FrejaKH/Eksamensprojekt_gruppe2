@@ -218,3 +218,25 @@ PRIMARY KEY (amrap_id, benchmark_id),
 FOREIGN KEY (amrap_id) REFERENCES amrap (amrap_id) ON DELETE CASCADE,
 FOREIGN KEY (benchmark_id) REFERENCES benchmark (benchmark_id)
 );
+SHOW TABLES;
+SHOW COLUMNS FROM theme;
+SHOW COLUMNS FROM user;
+SHOW COLUMNS FROM category;
+SHOW COLUMNS FROM card;
+SHOW COLUMNS FROM statistic;
+SHOW COLUMNS FROM user_statistic;
+SHOW COLUMNS FROM boxcollection;
+SHOW COLUMNS FROM cardcollection;
+SHOW COLUMNS FROM cardcollection_card;
+SHOW COLUMNS FROM user_cardcollection;
+SHOW COLUMNS FROM exercise;
+SHOW COLUMNS FROM benchmark;
+SHOW COLUMNS FROM workandrest;
+SHOW COLUMNS FROM workandrest_exercise;
+SHOW COLUMNS FROM repsandrounds;
+SHOW COLUMNS FROM repsandrounds_exercise;
+SHOW COLUMNS FROM repsandrounds_benchmark;
+SHOW COLUMNS FROM amrap;
+SHOW COLUMNS FROM amrap_exercise;
+SHOW COLUMNS FROM amrap_benchmark;
+
