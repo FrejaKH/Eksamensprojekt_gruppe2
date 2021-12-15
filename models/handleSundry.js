@@ -25,13 +25,19 @@ module.exports = {
     let type = obj.POST.type;
 
     const dbh = await maria.createConnection(dbp);
-    let sqlCard = `
+    let sqlNewCard = `
     INSERT INTO card (name, difficulty, video_url, type, category_id) 
     VALUES
     ('${hashtag}',	${difficulty},	'${videoURL}', '${type}',	${category})
     `;
 
-    await dbh.query(sqlCard);
+    let sqlType = `
+    INSERT INTO repsandrounds (rounds, card_id)
+    SELECT ${rounds}, card_id from card where card.name ='${hashtag}';
+    `;
+
+    await dbh.query(sqlNewCard);
+    await dbh.query(sqlType);
   },
   async updContacts(obj) {
     const dbh = await maria.createConnection(dbp);
@@ -78,6 +84,4 @@ module.exports = {
     let rows = await dbh.query(sql);
     return rows;
   },
-
-
 };
