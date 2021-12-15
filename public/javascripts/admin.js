@@ -1,12 +1,11 @@
 import { createMenu } from "./makemenu.js";
 
 const initialize = function () {
-    createMenu('menu');
-}
+  createMenu("menu");
 
-window.addEventListener('load', initialize);
+};
 
-
+window.addEventListener("load", initialize);
 
 const $ = function (foo) {
   return document.getElementById(foo);
@@ -26,7 +25,6 @@ const $q = function (foo) {
 };
 
 (() => {
-
   //Key Value pair of input fields
   const cardInputs = {
     type: $$q("add_cards", '[name="type"]'),
@@ -45,8 +43,8 @@ const $q = function (foo) {
        $$q("add_cards", '[name="reps4"]'),
     ],
     hashtag: $$q("add_cards", '[name="hashtag"]'),
-    text: $$q('add_cards','[name="text"]'),
-    time: $$q('add_cards','[name="time"]'),
+    text: $$q("add_cards", '[name="text"]'),
+    time: $$q("add_cards", '[name="time"]'),
     // level: $$q('add_cards','[name="level"]'),
     // qr: $$q('add_cards','[name="qr"]')
   };
@@ -69,8 +67,8 @@ const $q = function (foo) {
       $qa("[data-card-reps]")[3],
     ],
     hashtag: $q("[data-card-hashtag]"),
-    "text": $q('[data-card-text]'),
-    time: $q('[data-card-time]'),
+    text: $q("[data-card-text]"),
+    time: $q("[data-card-time]"),
     // level: $q('[data-card-level]')),
     // qr: $q('[data-card-qr]')
   };
@@ -78,36 +76,99 @@ const $q = function (foo) {
   const cardTypeInput = cardInputs.type;
   const cardTypeLabel = cardLabels.type;
 
+  //Create datalist element for exercise data
+  const exerciseDataList = document.createElement("datalist");
+  exerciseDataList.setAttribute("id", "datalist-exercises");
+  let option = document.createElement("option");
+
+  //Initializing exercise input from database
+  // let dataList = [];
+  // dataList = exerciseList;
+  // dataList.forEach(element, i => {
+  //   option.value = element[i].name;
+  //   exerciseDataList.appendChild(option);
+  // });
+  // $('exercises').append(exerciseDataList);
+
+  //Initializing exercise input from database HACK
+ 
+  // const populateList = async function () {
+  //   let r = await models.listExercises();
+  //   let exerciseList = [];
+  //   r.forEach(element, (i) => {
+  //     let exercise = new Exercise(r[i].id, r[i].name);
+  //     exerciseList.push(exercise);
+  //   });
+  //   exerciseList.sort((a, b) => a.id - b.id);
+
+  //   let dataList = [];
+  //   dataList = exerciseList;
+  //   dataList.forEach(element, (i) => {
+  //     option.value = element[i].name;
+  //     exerciseDataList.appendChild(option);
+  //   });
+  //   $("exercises").append(exerciseDataList);
+  // };
+
+  //Initializing exercise input from code
+  for (let i = 0; i < 10; i++) {
+    option.value = "Tuck Jumps";
+    exerciseDataList.appendChild(option);
+  }
+  $('exercises').append(exerciseDataList);
+
+  //Insert exercise list to inputs
+  cardInputs.exercises.forEach((item, i) => {
+    item.setAttribute("list", exerciseDataList.id);
+  });
+
   //Eventlistener on text change in "Type"
   cardInputs.type.addEventListener("input", () => {
-    cardLabels.type.setAttribute("data-card-type", cardInputs.type.options[cardInputs.type.selectedIndex].text);
+    cardLabels.type.setAttribute(
+      "data-card-type",
+      cardInputs.type.options[cardInputs.type.selectedIndex].text
+    );
     cardLabels.type.innerText = cardLabels.type
-      .getAttribute("data-card-type").toUpperCase();
+      .getAttribute("data-card-type")
+      .toUpperCase();
     if (cardInputs.type.value.length === 0) cardLabels.type.innerText = "Empty";
   });
     //Eventlistener on text change in "Rounds"
     cardInputs.rounds.addEventListener("input", () => {
       cardLabels.rounds.setAttribute("data-card-rounds", cardInputs.rounds.value);
-      cardLabels.rounds.innerText = cardLabels.rounds
-        .getAttribute("data-card-rounds").toUpperCase() + " ROUNDS";
-      if (cardInputs.rounds.value === '1') cardLabels.rounds.innerText = "1 ROUND";
-      if (cardInputs.rounds.value.length === 0) cardLabels.rounds.innerText = "1 ROUND";
+    cardLabels.rounds.innerText =
+      cardLabels.rounds.getAttribute("data-card-rounds").toUpperCase() +
+      " ROUNDS";
+    if (cardInputs.rounds.value === "1")
+      cardLabels.rounds.innerText = "1 ROUND";
+    if (cardInputs.rounds.value.length === 0)
+      cardLabels.rounds.innerText = "1 ROUND";
     });
 
       //Eventlistener on text change in "Time/Reps"
   cardInputs.duration.addEventListener("input", () => {
-    cardLabels.duration.setAttribute("data-card-duration", cardInputs.duration.value);
+    cardLabels.duration.setAttribute(
+      "data-card-duration",
+      cardInputs.duration.value
+    );
     cardLabels.duration.innerText = cardLabels.duration
       .getAttribute("data-card-duration")
       .toUpperCase();
-    if (cardInputs.duration.value.length === 0) cardLabels.duration.innerText = "---";
+    if (cardInputs.duration.value.length === 0)
+      cardLabels.duration.innerText = "---";
   });
 
     //Eventlistener on text change in "Hashtag"
     cardInputs.hashtag.addEventListener("input", () => {
-      cardLabels.hashtag.setAttribute("data-card-hashtag", cardInputs.hashtag.value);
-      cardLabels.hashtag.innerText = `#Piefit${cardLabels.hashtag.getAttribute("data-card-hashtag")}`;
-      if (cardInputs.hashtag.value.length === 0) cardLabels.hashtag.innerText = "#Piefit";
+    cardLabels.hashtag.setAttribute(
+      "data-card-hashtag",
+      cardInputs.hashtag.value
+    );
+    cardLabels.hashtag.innerText = `#Piefit${cardLabels.hashtag.getAttribute(
+      "data-card-hashtag"
+    )}`;
+    if (cardInputs.hashtag.value.length === 0)
+      cardLabels.hashtag.innerText = "#Piefit";
     });
 
   //Eventlistener on text change in "Exercises"
@@ -115,7 +176,9 @@ const $q = function (foo) {
   cardInputs.exercises.forEach((item, i) => {
     item.addEventListener("input", () => {
       cardLabels.exercises[i].setAttribute("data-card-exercise", item.value);
-      cardLabels.exercises[i].innerText = cardLabels.exercises[i].getAttribute("data-card-exercise").toUpperCase();
+      cardLabels.exercises[i].innerText = cardLabels.exercises[i]
+        .getAttribute("data-card-exercise")
+        .toUpperCase();
       if (item.value.length === 0) cardLabels.exercises[i].innerText = "Empty";
     });
   });
@@ -126,13 +189,11 @@ const $q = function (foo) {
     item.addEventListener("input", () => {
       cardLabels.reps[i].setAttribute("data-card-reps", item.value);
       cardLabels.reps[i].innerText = cardLabels.reps[i]
-        .getAttribute("data-card-reps").toUpperCase();
+        .getAttribute("data-card-reps")
+        .toUpperCase();
       if (item.value.length === 0) cardLabels.reps[i].innerText = "Empty";
     });
   });
-
-
-
 
     //Eventlistener on text change in "Time"
 
@@ -145,17 +206,14 @@ const $q = function (foo) {
       if (cardInputs.type.value === "AMRAP") {
         cardLabels.type.innerText = "AMRAP " + timeText; 
       }
-
     });
 
       //Eventlistener on text change in "References"
   cardInputs.text.addEventListener("input", () => {
     cardLabels.text.setAttribute("data-card-text", cardInputs.text.value);
     cardLabels.text.innerText = cardLabels.text
-      .getAttribute("data-card-text").toUpperCase();
+      .getAttribute("data-card-text")
+      .toUpperCase();
     if (cardInputs.text.value.length === 0) cardLabels.text.innerText = "Empty";
   });
-
-  
-
 })();
