@@ -200,9 +200,10 @@ module.exports = {
         req.url = "/velkommen";
         module.exports.velkommen(req, res);
       } else {
+        let r = await models.listExercises(req, res);
         let content = "text/html; charset=utf-8";
         let path = "views/admin.html";
-        getAndServe(res, path, content); // extra arg for templater
+        getAndServe(res, path, content, {exercises: r}); // extra arg for templater
       }
     }
   },

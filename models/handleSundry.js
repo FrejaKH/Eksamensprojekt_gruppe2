@@ -30,15 +30,20 @@ module.exports = {
     VALUES
     ('${hashtag}',	${difficulty},	'${videoURL}', '${type}',	${category})
     `;
-
     let sqlType = `
     INSERT INTO repsandrounds (rounds, card_id)
     SELECT ${rounds}, card_id from card where card.name ='${hashtag}';
     `;
-
     await dbh.query(sqlNewCard);
     await dbh.query(sqlType);
   },
+
+  async listExercises() {
+    const dbh = await maria.createConnection(dbp);
+    const rows = await dbh.query(`select * from exercise`);
+    return rows;
+  },
+
   async updContacts(obj) {
     const dbh = await maria.createConnection(dbp);
     let hashed = await bcrypt.hash(obj.POST.password, 10); //Password + salt (1)
