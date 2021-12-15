@@ -753,8 +753,7 @@ li:first-child {
 .card-header {
   display: flex;
   align-items: flex-start;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 .card-header .logo {
@@ -791,8 +790,6 @@ li:first-child {
   line-height: 2.5;
   color: var(--clr-red);
 }
-
-
 
 .grid-type__workandrest {
   grid-template-columns: 1fr;
@@ -846,11 +843,20 @@ li:first-child {
 
 .difficulty {
   display: flex;
-}
-
-.difficulty {
+  flex-direction: column;
   border-right: 2px solid var(--clr-black);
   text-align: center;
+  margin-top:2rem;
+}
+
+.difficulty_icons, .scan_workout {
+  display: flex;
+  justify-content: center;
+  margin:2rem 0;
+}
+
+.difficulty h2, .scan_workout h2{
+  color:var(--clr-red);
 }
 
 .p-icon {
