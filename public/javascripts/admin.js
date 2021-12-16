@@ -120,20 +120,25 @@ const $q = function (foo) {
 
   //Eventlistener on text change in "Hashtag"
   cardInputs.hashtag.addEventListener("input", () => {
-    cardLabels.hashtag.setAttribute(
-      "data-card-hashtag",
-      cardInputs.hashtag.value
-    );
-    cardLabels.hashtag.innerText = `#Piefit${cardLabels.hashtag.getAttribute(
-      "data-card-hashtag"
-    )}`;
+    // const regex = /#Piefit\B[A-Z]{1}\w+/;
+    // let string = cardInputs.hashtag.value;
+    // let match = regex.exec(string);
+
+      cardLabels.hashtag.setAttribute(
+        "data-card-hashtag",
+        cardInputs.hashtag.value
+      );
+      cardLabels.hashtag.innerText = `${cardLabels.hashtag.getAttribute(
+        "data-card-hashtag"
+      )}`;
+    
     if (cardInputs.hashtag.value.length === 0)
-      cardLabels.hashtag.innerText = "#Piefit";
+      cardLabels.hashtag.innerText = "#PiefitYourName";
   });
 
   //Eventlistener on text change in "Exercises"
 
-  //Selected item: 
+  //Selected item:
   //document.getElementsByName('exercise1')[0].options[document.getElementsByName('exercise1')[0].selectedIndex].getAttribute('data-exercise-id');
   cardInputs.exercises.forEach((item, i) => {
     item.addEventListener("input", () => {
@@ -143,7 +148,10 @@ const $q = function (foo) {
         .toUpperCase();
       if (item.value.length === 0) cardLabels.exercises[i].innerText = "Empty";
 
-      item.setAttribute("data-exercise-id", item.options[item.selectedIndex].getAttribute('data-exercise-id'));
+      item.setAttribute(
+        "data-exercise-id",
+        item.options[item.selectedIndex].getAttribute("data-exercise-id")
+      );
     });
   });
   //Eventlistener on text change in "Reps"

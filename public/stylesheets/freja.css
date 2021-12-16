@@ -702,7 +702,8 @@ li:first-child {
   height: 2rem;
 }
 
-#exercises input {
+#exercises input, 
+#exercises select {
   width: 8.4rem;
 }
 
