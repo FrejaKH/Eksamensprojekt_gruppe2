@@ -17,12 +17,22 @@ module.exports = {
   // },
   async createCard(obj) {
     //creating variables
-    let hashtag = obj.POST.hashtag;
+    console.log(obj.POST);
+    let type = obj.POST.type;
     let rounds = obj.POST.rounds;
+    let exercises = [
+      obj.POST.exercise1,
+      obj.POST.exercise2,
+      obj.POST.exercise3,
+      obj.POST.exercise4,
+    ];
+    let reps = [obj.POST.reps1, obj.POST.reps2, obj.POST.reps3, obj.POST.reps4];
+    let hashtag = obj.POST.hashtag;
+    let text = obj.POST.text;
+    let time = obj.POST.time;
     let videoURL = obj.POST.qr;
     let difficulty = obj.POST.level;
     let category = 1; //hardcode Core category
-    let type = obj.POST.type;
 
     const dbh = await maria.createConnection(dbp);
     let sqlNewCard = `
@@ -34,8 +44,34 @@ module.exports = {
     INSERT INTO repsandrounds (rounds, card_id)
     SELECT ${rounds}, card_id from card where card.name ='${hashtag}';
     `;
+
     await dbh.query(sqlNewCard);
     await dbh.query(sqlType);
+
+    //Taking exercise name, and find the corresponding ID.
+    let exerciseID = [];
+    // exercises.forEach((item, i) => {
+    //   rows = await dbh.query(
+    //      `select exercise_id from exercise where name="${item}"`
+    //    );
+    //    exerciseID[i] = rows;
+    //   console.log(exerciseID);
+    //   exerciseID.push(sqlExerciseID[0]);
+    // });
+
+    // let sqlExercises = "";
+    // if (type === "repsandrounds") {
+    //   exerciseID.forEach((id, i) => {
+    //     sqlExercises = `
+    //     INSERT INTO repsandrounds_exercise (repsandrounds_id, exercise_id, reps, ordernumber)
+    //     SELECT rar.repsandrounds_id, ${id}, ${reps[i]}, ${i + 1}
+    //     FROM repsandrounds rar 
+    //     LEFT JOIN card c ON rar.card_id = c.card_id
+    //     WHERE c.name = '${hashtag}';
+    //     `;
+    //     await dbh.query(sqlExercises);
+    //   });
+    // }
   },
 
   async listExercises() {
