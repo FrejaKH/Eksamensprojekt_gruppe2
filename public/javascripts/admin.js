@@ -2,7 +2,6 @@ import { createMenu } from "./makemenu.js";
 
 const initialize = function () {
   createMenu("menu");
-
 };
 
 window.addEventListener("load", initialize);
@@ -37,10 +36,10 @@ const $q = function (foo) {
       $$q("add_cards", '[name="exercise4"]'),
     ],
     reps: [
-       $$q("add_cards", '[name="reps1"]'),
-       $$q("add_cards", '[name="reps2"]'),
-       $$q("add_cards", '[name="reps3"]'),
-       $$q("add_cards", '[name="reps4"]'),
+      $$q("add_cards", '[name="reps1"]'),
+      $$q("add_cards", '[name="reps2"]'),
+      $$q("add_cards", '[name="reps3"]'),
+      $$q("add_cards", '[name="reps4"]'),
     ],
     hashtag: $$q("add_cards", '[name="hashtag"]'),
     text: $$q("add_cards", '[name="text"]'),
@@ -76,51 +75,12 @@ const $q = function (foo) {
   const cardTypeInput = cardInputs.type;
   const cardTypeLabel = cardLabels.type;
 
-  //Create datalist element for exercise data
-  const exerciseDataList = document.createElement("datalist");
-  exerciseDataList.setAttribute("id", "datalist-exercises");
-  let option = document.createElement("option");
-
-  //Initializing exercise input from database
-  // let dataList = [];
-  // dataList = exerciseList;
-  // dataList.forEach(element, i => {
-  //   option.value = element[i].name;
-  //   exerciseDataList.appendChild(option);
-  // });
-  // $('exercises').append(exerciseDataList);
-
-  //Initializing exercise input from database HACK
- 
-  // const populateList = async function () {
-  //   let r = await models.listExercises();
-  //   let exerciseList = [];
-  //   r.forEach(element, (i) => {
-  //     let exercise = new Exercise(r[i].id, r[i].name);
-  //     exerciseList.push(exercise);
-  //   });
-  //   exerciseList.sort((a, b) => a.id - b.id);
-
-  //   let dataList = [];
-  //   dataList = exerciseList;
-  //   dataList.forEach(element, (i) => {
-  //     option.value = element[i].name;
-  //     exerciseDataList.appendChild(option);
-  //   });
-  //   $("exercises").append(exerciseDataList);
-  // };
-
-  //Initializing exercise input from code
-  for (let i = 0; i < 10; i++) {
-    option.value = "Tuck Jumps";
-    exerciseDataList.appendChild(option);
-  }
-  $('exercises').append(exerciseDataList);
-
   //Insert exercise list to inputs
-  cardInputs.exercises.forEach((item, i) => {
-    item.setAttribute("list", "exercise-list");
-  });
+
+  // cardInputs.exercises.forEach((item, i) => {
+  //   let datalist = $('exercise-list');
+  //   item.appendChild(datalist);
+  // });
 
   //Eventlistener on text change in "Type"
   cardInputs.type.addEventListener("input", () => {
@@ -133,9 +93,9 @@ const $q = function (foo) {
       .toUpperCase();
     if (cardInputs.type.value.length === 0) cardLabels.type.innerText = "Empty";
   });
-    //Eventlistener on text change in "Rounds"
-    cardInputs.rounds.addEventListener("input", () => {
-      cardLabels.rounds.setAttribute("data-card-rounds", cardInputs.rounds.value);
+  //Eventlistener on text change in "Rounds"
+  cardInputs.rounds.addEventListener("input", () => {
+    cardLabels.rounds.setAttribute("data-card-rounds", cardInputs.rounds.value);
     cardLabels.rounds.innerText =
       cardLabels.rounds.getAttribute("data-card-rounds").toUpperCase() +
       " ROUNDS";
@@ -143,9 +103,9 @@ const $q = function (foo) {
       cardLabels.rounds.innerText = "1 ROUND";
     if (cardInputs.rounds.value.length === 0)
       cardLabels.rounds.innerText = "1 ROUND";
-    });
+  });
 
-      //Eventlistener on text change in "Time/Reps"
+  //Eventlistener on text change in "Time/Reps"
   cardInputs.duration.addEventListener("input", () => {
     cardLabels.duration.setAttribute(
       "data-card-duration",
@@ -158,8 +118,8 @@ const $q = function (foo) {
       cardLabels.duration.innerText = "---";
   });
 
-    //Eventlistener on text change in "Hashtag"
-    cardInputs.hashtag.addEventListener("input", () => {
+  //Eventlistener on text change in "Hashtag"
+  cardInputs.hashtag.addEventListener("input", () => {
     cardLabels.hashtag.setAttribute(
       "data-card-hashtag",
       cardInputs.hashtag.value
@@ -169,10 +129,12 @@ const $q = function (foo) {
     )}`;
     if (cardInputs.hashtag.value.length === 0)
       cardLabels.hashtag.innerText = "#Piefit";
-    });
+  });
 
   //Eventlistener on text change in "Exercises"
 
+  //Selected item: 
+  //document.getElementsByName('exercise1')[0].options[document.getElementsByName('exercise1')[0].selectedIndex].getAttribute('data-exercise-id');
   cardInputs.exercises.forEach((item, i) => {
     item.addEventListener("input", () => {
       cardLabels.exercises[i].setAttribute("data-card-exercise", item.value);
@@ -180,10 +142,11 @@ const $q = function (foo) {
         .getAttribute("data-card-exercise")
         .toUpperCase();
       if (item.value.length === 0) cardLabels.exercises[i].innerText = "Empty";
+
+      item.setAttribute("data-exercise-id", item.options[item.selectedIndex].getAttribute('data-exercise-id'));
     });
   });
-
-   //Eventlistener on text change in "Reps"
+  //Eventlistener on text change in "Reps"
 
   cardInputs.reps.forEach((item, i) => {
     item.addEventListener("input", () => {
@@ -195,20 +158,20 @@ const $q = function (foo) {
     });
   });
 
-    //Eventlistener on text change in "Time"
+  //Eventlistener on text change in "Time"
 
-    cardInputs.time.addEventListener("input", () => {
-      let timeText = cardInputs.time.value;
-      // cardLabels.time.setAttribute("data-card-time", cardInputs.time.value);
-      // cardLabels.time.innerText = cardLabels.time
-      //   .getAttribute("data-card-time").toUpperCase();
-      // if (cardInputs.time.value.length === 0) cardLabels.time.innerText = "00:00";
-      if (cardInputs.type.value === "AMRAP") {
-        cardLabels.type.innerText = "AMRAP " + timeText; 
-      }
-    });
+  cardInputs.time.addEventListener("input", () => {
+    let timeText = cardInputs.time.value;
+    // cardLabels.time.setAttribute("data-card-time", cardInputs.time.value);
+    // cardLabels.time.innerText = cardLabels.time
+    //   .getAttribute("data-card-time").toUpperCase();
+    // if (cardInputs.time.value.length === 0) cardLabels.time.innerText = "00:00";
+    if (cardInputs.type.value === "AMRAP") {
+      cardLabels.type.innerText = "AMRAP " + timeText;
+    }
+  });
 
-      //Eventlistener on text change in "References"
+  //Eventlistener on text change in "References"
   cardInputs.text.addEventListener("input", () => {
     cardLabels.text.setAttribute("data-card-text", cardInputs.text.value);
     cardLabels.text.innerText = cardLabels.text
